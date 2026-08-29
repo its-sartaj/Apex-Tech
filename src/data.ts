@@ -7,7 +7,7 @@ export const COMPANY_DETAILS = {
   phone: '+91 7979968347',
   phoneRaw: '7979968347',
   phoneTel: '+917979968347',
-  email: 'mrbeast797996@gmail.com',
+  email: 'apextech.servicess@gmail.com',
   secondaryEmail: 'hello@apextech.com',
   whatsappUrl: 'https://wa.me/917979968347?text=Hi%20Apex%20Tech%20team%2C%20I%20would%20like%20to%20discuss%20a%20website%20or%20design%20project.',
   location: 'Tech Hub, Cyber Valley, India',
@@ -317,7 +317,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQItem[] = [
   {
     question: 'How do I start a project with Apex Tech?',
-    answer: 'Simply call us directly at +91 7979968347, send a WhatsApp message, or drop an email to mrbeast797996@gmail.com. We schedule a free 20-minute discovery discussion to understand your requirements and deliver a clear scope and timeline roadmap within 24 hours.',
+    answer: 'Simply call us directly at +91 7979968347, send a WhatsApp message, or drop an email to apextech.servicess@gmail.com. We schedule a free 20-minute discovery discussion to understand your requirements and deliver a clear scope and timeline roadmap within 24 hours.',
     category: 'Process & Timelines',
   },
   {
