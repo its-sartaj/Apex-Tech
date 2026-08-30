@@ -39,13 +39,17 @@ export function ApexAnimatedMark({
         className="absolute -inset-1 bg-gradient-to-tr from-[#2196F3]/40 via-[#00BCD4]/30 to-[#4FC3F7]/20 rounded-full blur-md pointer-events-none -z-10 group-hover/mark:scale-125 group-hover/mark:opacity-80 transition-all duration-300"
       />
 
-      {/* Logo Image */}
-      <img
-        src="./logo.jpg"
-        alt="Apex Tech"
+      {/* Logo Image — scaled up to crop out light background edges */}
+      <div
         style={{ width: size, height: size }}
-        className="rounded-full object-cover shadow-lg border border-white/20"
-      />
+        className="rounded-full overflow-hidden shadow-lg"
+      >
+        <img
+          src="./logo.jpg"
+          alt="Apex Tech"
+          className="w-full h-full object-cover scale-[1.15]"
+        />
+      </div>
     </motion.div>
   );
 }
