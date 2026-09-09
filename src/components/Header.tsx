@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Mail, Menu, X, ArrowRight, MessageSquare } from 'lucide-react';
+import { Phone, Mail, Menu, X, ArrowRight, MessageSquare, Lock } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
 import Logo from './Logo';
 
 interface HeaderProps {
   onOpenConsultation: () => void;
+  onOpenAdmin?: () => void;
 }
 
-export default function Header({ onOpenConsultation }: HeaderProps) {
+export default function Header({ onOpenConsultation, onOpenAdmin }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -95,6 +96,19 @@ export default function Header({ onOpenConsultation }: HeaderProps) {
               <span>Start a project</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </motion.button>
+
+            {onOpenAdmin && (
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={onOpenAdmin}
+                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white border border-white/10 transition-colors cursor-pointer"
+                title="Admin Portal (Leads & Inquiries)"
+                aria-label="Open Admin Portal"
+              >
+                <Lock className="w-3.5 h-3.5" />
+              </motion.button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -150,6 +164,19 @@ export default function Header({ onOpenConsultation }: HeaderProps) {
                   {item.label}
                 </a>
               ))}
+
+              {onOpenAdmin && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAdmin();
+                  }}
+                  className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-left font-semibold text-base cursor-pointer"
+                >
+                  <Lock className="w-4 h-4 text-[#00A09D]" />
+                  <span>Admin Portal</span>
+                </button>
+              )}
             </div>
 
             <div className="pt-3 border-t border-white/10 space-y-2.5">

@@ -20,11 +20,14 @@ export default function App() {
   const [selectedServiceForModal, setSelectedServiceForModal] = useState<string>('Web Development');
 
   useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === '#admin') {
+    const checkAdminTrigger = () => {
+      const hash = window.location.hash.toLowerCase();
+      const search = window.location.search.toLowerCase();
+      if (hash.includes('admin') || search.includes('admin')) {
         setAdminOpen(true);
       }
     };
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
         e.preventDefault();
@@ -32,14 +35,14 @@ export default function App() {
       }
     };
 
-    if (window.location.hash === '#admin') {
-      setAdminOpen(true);
-    }
+    checkAdminTrigger();
 
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', checkAdminTrigger);
+    window.addEventListener('popstate', checkAdminTrigger);
     window.addEventListener('keydown', handleKeyDown);
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('hashchange', checkAdminTrigger);
+      window.removeEventListener('popstate', checkAdminTrigger);
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
@@ -58,7 +61,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#0b0c10] text-[#F5F5F5] flex flex-col selection:bg-[#714B67] selection:text-white">
       {/* Primary Navigation Header */}
-      <Header onOpenConsultation={handleOpenConsultation} />
+      <Header onOpenConsultation={handleOpenConsultation} onOpenAdmin={() => setAdminOpen(true)} />
 
       {/* Main Content Sections with Glowing Animated Dividers */}
       <main className="flex-1">
