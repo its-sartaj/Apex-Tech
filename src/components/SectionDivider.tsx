@@ -31,7 +31,7 @@ export default function SectionDivider({
           duration: 4.5,
           ease: 'easeInOut',
         }}
-        className="absolute w-3/4 max-w-4xl h-12 bg-gradient-to-r from-transparent via-[#714B67]/25 via-[#017E84]/25 to-transparent blur-2xl pointer-events-none -z-10"
+        className="absolute w-3/4 max-w-4xl h-12 bg-[linear-gradient(to_right,transparent,rgba(113,75,103,0.25),rgba(1,126,132,0.25),transparent)] blur-2xl pointer-events-none -z-10"
       />
 
       {/* 2. Full Width Baseline Subtle Track */}
@@ -39,7 +39,7 @@ export default function SectionDivider({
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent relative">
           
           {/* 3. Gradient Laser Core Line */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#714B67] via-[#017E84] to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent,#714B67,#017E84,transparent)] opacity-80" />
 
           {/* 4. Animated Traveling Laser Pulse Bead (Sweeps horizontally) */}
           <motion.div

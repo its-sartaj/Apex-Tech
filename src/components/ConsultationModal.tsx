@@ -2,6 +2,7 @@ import { useState, FormEvent, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Send, MessageSquare, CheckCircle2, Sparkles, ShieldCheck, Phone, Mail, ArrowRight, Lock, AlertCircle } from 'lucide-react';
 import { COMPANY_DETAILS, SERVICES } from '../data';
+import { saveInquiry } from '../utils/inquiries';
 import Logo from './Logo';
 
 interface ConsultationModalProps {
@@ -124,6 +125,15 @@ export default function ConsultationModal({ isOpen, onClose, defaultService }: C
     if (!isValid) return;
 
     setIsSubmitting(true);
+    saveInquiry({
+      type: 'consultation_modal',
+      name,
+      email,
+      phone,
+      service,
+      scope: projectTimeline,
+      message: notes,
+    });
     // Smooth micro-delay for realistic feedback
     setTimeout(() => {
       setIsSubmitting(false);
@@ -138,7 +148,7 @@ Service: ${service}
 Phone: ${phone || 'Not provided'}
 Email: ${email || 'Not provided'}
 Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
-    return `https://wa.me/917979968347?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/91${COMPANY_DETAILS.phoneRaw}?text=${encodeURIComponent(text)}`;
   };
 
   return (

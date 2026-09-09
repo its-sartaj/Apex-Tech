@@ -266,7 +266,7 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                       >
                         <img
                           src={img}
-                          alt={`Thumbnail ${idx + 1}`}
+                          alt={`${selectedCaseStudy.title} preview ${idx + 1}`}
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover"
                         />

@@ -65,3 +65,17 @@ export interface ProposalFormState {
   phone?: string;
   notes?: string;
 }
+
+export interface Inquiry {
+  id: string;
+  type: 'contact_form' | 'consultation_modal';
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  scope?: string;
+  message?: string;
+  createdAt: string;
+  status: 'new' | 'contacted' | 'closed';
+}
+

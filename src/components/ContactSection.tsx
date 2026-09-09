@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, Mail, MessageSquare, Send, CheckCircle2, Copy, Check, Clock, Sparkles, AlertCircle } from 'lucide-react';
 import { COMPANY_DETAILS, SERVICES } from '../data';
+import { saveInquiry } from '../utils/inquiries';
 
 interface ContactSectionProps {
   preselectedService?: string;
@@ -109,6 +110,15 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
     if (!isValid) return;
 
     setIsSubmitting(true);
+    saveInquiry({
+      type: 'contact_form',
+      name,
+      email,
+      phone,
+      service,
+      scope: projectScope,
+      message,
+    });
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -123,7 +133,7 @@ Phone: ${phone || 'Not provided'}
 Service Interested: ${service}
 Project Scope: ${projectScope}
 Message: ${message || 'I would like to discuss a new digital project with your team.'}`;
-    return `https://wa.me/917979968347?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/91${COMPANY_DETAILS.phoneRaw}?text=${encodeURIComponent(text)}`;
   };
 
   return (

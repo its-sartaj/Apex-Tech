@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Phone, Mail, CheckCircle2, ShieldCheck, Sparkles, MessageCircle, TrendingUp, Layers, Zap, Star, Award, Compass } from 'lucide-react';
+import { ArrowRight, Phone, Mail, CheckCircle2, ShieldCheck, Sparkles, MessageCircle, TrendingUp, Zap, Star } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
 import Logo from './Logo';
 

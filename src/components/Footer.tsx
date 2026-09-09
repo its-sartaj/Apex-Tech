@@ -1,8 +1,12 @@
-import { Phone, Mail, MessageSquare, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MessageSquare, ArrowUp, Lock } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
 import Logo from './Logo';
 
-export default function Footer() {
+interface FooterProps {
+  onOpenAdmin?: () => void;
+}
+
+export default function Footer({ onOpenAdmin }: FooterProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -153,6 +157,16 @@ export default function Footer() {
             <a href="#services" className="hover:text-white transition-colors">Services</a>
             <a href="#work" className="hover:text-white transition-colors">Portfolio</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            {onOpenAdmin && (
+              <button
+                onClick={onOpenAdmin}
+                className="hover:text-white transition-colors flex items-center gap-1 opacity-60 hover:opacity-100 cursor-pointer"
+                title="Admin Portal (Leads & Inquiries)"
+              >
+                <Lock className="w-3 h-3" />
+                <span>Admin</span>
+              </button>
+            )}
             <button
               onClick={scrollToTop}
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
