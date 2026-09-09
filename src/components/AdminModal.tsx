@@ -15,7 +15,7 @@ interface AdminModalProps {
   onClose: () => void;
 }
 
-const DEFAULT_PIN = 'apex2026';
+const DEFAULT_PIN = 'sartajapex9911';
 
 export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
@@ -55,7 +55,7 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
       setPinInput('');
       setInquiries(getInquiries());
     } else {
-      setPinError('Incorrect PIN. Default is: apex2026');
+      setPinError('Incorrect password. Please try again.');
     }
   };
 
@@ -185,7 +185,7 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
                 <div>
                   <input
                     type="password"
-                    placeholder="Enter PIN (Default: apex2026)"
+                    placeholder="Enter Admin Password"
                     value={pinInput}
                     onChange={(e) => {
                       setPinInput(e.target.value);
@@ -208,10 +208,6 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
                 >
                   Unlock Dashboard
                 </button>
-
-                <p className="text-[11px] text-white/40">
-                  Tip: Default PIN is <code className="text-[#00A09D]">apex2026</code>
-                </p>
               </form>
             </div>
           ) : (
