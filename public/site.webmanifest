@@ -1,14 +1,14 @@
-﻿{
+{
   "name": "Apex Tech | Web Development, UI/UX & SEO",
   "short_name": "Apex Tech",
   "description": "Apex Tech is a premier digital agency offering modern web development, UI/UX design systems, technical SEO, and conversion-focused digital marketing.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0b0c10",
   "theme_color": "#0b0c10",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "./favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
