@@ -8,26 +8,6 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenConsultation }: HeroProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-    },
-  };
-
   return (
     <section id="hero-section" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#0b0c10] overflow-hidden">
       {/* Animated Subtle Ambient Light Canvas (Pure GPU CSS - Zero TBT) */}
@@ -55,17 +35,11 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Core Value Proposition */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="lg:col-span-7 space-y-7"
-          >
+          {/* Left Column: Core Value Proposition (Instant FCP & LCP) */}
+          <div className="lg:col-span-7 space-y-7">
             {/* Eyebrow badge with glowing pulse */}
-            <motion.div variants={itemVariants}>
-              <motion.div
-                whileHover={{ scale: 1.04 }}
+            <div>
+              <div
                 className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#017E84]/15 border border-[#017E84]/40 text-[#00A09D] text-xs font-bold uppercase tracking-widest shadow-sm cursor-default"
               >
                 <span className="relative flex h-2 w-2">
@@ -73,49 +47,41 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#017E84]" />
                 </span>
                 <span>Full-Service Digital Studio & Website Builder</span>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
-            {/* Main Headline with Animated Path Underline */}
-            <motion.h1
-              variants={itemVariants}
+            {/* Main Headline with Instant Paint (Crucial LCP element) */}
+            <h1
               className="font-display font-extrabold text-4xl sm:text-5xl lg:text-7xl text-[#F5F5F5] tracking-tight leading-[1.05]"
             >
               We build the climb <br />
               <span className="bg-gradient-to-r from-[#714B67] via-[#9B6C8F] to-[#017E84] bg-clip-text text-transparent relative inline-block">
                 to your apex.
-                <motion.svg
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1.2, delay: 0.5, ease: 'easeInOut' }}
+                <svg
                   className="absolute -bottom-2.5 left-0 w-full text-[#017E84]"
                   height="10"
                   viewBox="0 0 200 10"
                   fill="none"
                 >
-                  <motion.path
+                  <path
                     d="M2 7C50 2 150 2 198 7"
                     stroke="currentColor"
                     strokeWidth="3.5"
                     strokeLinecap="round"
                   />
-                </motion.svg>
+                </svg>
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Lead paragraph */}
-            <motion.p
-              variants={itemVariants}
-              className="text-lg sm:text-xl text-white/75 max-w-2xl leading-relaxed font-normal"
+            <p
+              className="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed font-normal"
             >
               Apex Tech designs and builds high-performing websites, modern UI/UX design systems, and organic search visibility for ambitious brands ready to reach further — backed by direct communication, clean code, and zero agency fluff.
-            </motion.p>
+            </p>
 
             {/* Direct Contact Bar Highlight Card */}
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ y: -3, borderColor: 'rgba(113,75,103,0.4)' }}
-              transition={{ duration: 0.25 }}
+            <div
               className="p-4 sm:p-5 rounded-2xl bg-[#14101A]/90 backdrop-blur-md border border-[#714B67]/30 shadow-2xl max-w-xl relative overflow-hidden group"
             >
               {/* Subtle card edge glow */}
@@ -159,10 +125,10 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   <span>WhatsApp</span>
                 </motion.a>
               </div>
-            </motion.div>
+            </div>
 
             {/* CTA Action Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <motion.button
                 id="hero-primary-cta"
                 whileHover={{ scale: 1.04, y: -2 }}
@@ -191,11 +157,10 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 <span>Our capabilities</span>
                 <span aria-hidden="true">→</span>
               </motion.a>
-            </motion.div>
+            </div>
 
             {/* Trust Highlights Checkmarks */}
-            <motion.div
-              variants={itemVariants}
+            <div
               className="flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-white/80 pt-2 font-medium"
             >
               <div className="flex items-center gap-1.5">
@@ -210,14 +175,11 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 <ShieldCheck className="w-4 h-4 text-[#714B67]" />
                 <span>Fixed Scope &amp; Guaranteed Milestones</span>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Column: Interactive Animated Summit Graphic & Live Telemetry Cards */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          <div
             className="lg:col-span-5 relative"
           >
             {/* Floating Top Floating Chip (Pure CSS) */}
@@ -344,7 +306,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom Metrics Row with Smooth Scroll-Triggered Fade-In */}
