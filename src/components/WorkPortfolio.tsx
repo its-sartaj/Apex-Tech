@@ -107,7 +107,9 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               <div className="relative h-60 w-full overflow-hidden bg-[#14101A]">
                 <img
                   src={project.imageUrl}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.category.toUpperCase()} Project by Apex Tech`}
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
@@ -230,7 +232,9 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                     ? selectedCaseStudy.galleryImages[activeGalleryIndex]
                     : selectedCaseStudy.imageUrl
                 }
-                alt={selectedCaseStudy.title}
+                alt={`${selectedCaseStudy.title} - ${selectedCaseStudy.client} Case Study`}
+                loading="lazy"
+                decoding="async"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center"
               />
@@ -266,7 +270,7 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                       >
                         <img
                           src={img}
-                          alt={`${selectedCaseStudy.title} preview ${idx + 1}`}
+                          alt={`Thumbnail ${idx + 1}`}
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover"
                         />

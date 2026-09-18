@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://its-sartaj.github.io/Apex-Tech/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Apex Tech Modern Digital Agency Work Portfolio</image:title>
+      <image:caption>Apex Tech Web Development, UI/UX Design and SEO Portfolio</image:caption>
+    </image:image>
+  </url>
+</urlset>
