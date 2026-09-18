@@ -390,15 +390,18 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       animate={shakeKeys.name > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1.5">
+                      <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
                         Your Name *
                       </label>
                       <input
                         type="text"
+                        id="contact-name"
+                        name="name"
+                        autoComplete="name"
                         placeholder="e.g. Rahul Sharma"
                         value={name}
                         onChange={(e) => handleNameChange(e.target.value)}
-                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/40 text-sm focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/60 text-sm focus:outline-none transition-all duration-200 ${
                           errors.name
                             ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
                             : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
@@ -426,15 +429,18 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       animate={shakeKeys.email > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1.5">
+                      <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
                         Email Address *
                       </label>
                       <input
                         type="email"
+                        id="contact-email"
+                        name="email"
+                        autoComplete="email"
                         placeholder="you@company.com"
                         value={email}
                         onChange={(e) => handleEmailChange(e.target.value)}
-                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/40 text-sm focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/60 text-sm focus:outline-none transition-all duration-200 ${
                           errors.email
                             ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
                             : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
@@ -464,15 +470,18 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       animate={shakeKeys.phone > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1.5">
+                      <label htmlFor="contact-phone" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
                         Phone / WhatsApp Number
                       </label>
                       <input
                         type="tel"
+                        id="contact-phone"
+                        name="phone"
+                        autoComplete="tel"
                         placeholder="+91 98765 43210"
                         value={phone}
                         onChange={(e) => handlePhoneChange(e.target.value)}
-                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/40 text-sm focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/60 text-sm focus:outline-none transition-all duration-200 ${
                           errors.phone
                             ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
                             : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
@@ -495,10 +504,12 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                     </motion.div>
 
                     <div>
-                      <label className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1.5">
+                      <label htmlFor="contact-service" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
                         Discipline of Interest
                       </label>
                       <select
+                        id="contact-service"
+                        name="service"
                         value={service}
                         onChange={(e) => setService(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-[#14101A] border border-white/15 text-white text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
@@ -509,28 +520,29 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                           </option>
                         ))}
                         <option value="Complete Web & SEO Package" className="bg-[#14101A] text-white">
-                          Complete Web & SEO Package (Web + UI/UX + SEO)
+                          Complete Web &amp; SEO Package (Web + UI/UX + SEO)
                         </option>
                       </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
                       Target Project Scale
-                    </label>
+                    </span>
                     <div className="grid grid-cols-3 gap-2">
                       {['MVP / Rapid Sprint', 'Full Platform Build', 'Enterprise Scale'].map((scope) => (
                         <motion.button
                           key={scope}
                           type="button"
+                          aria-pressed={projectScope === scope}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setProjectScope(scope)}
                           className={`py-2.5 px-3 rounded-xl text-xs font-bold border transition-all truncate ${
                             projectScope === scope
                               ? 'bg-[#714B67] text-white border-[#714B67] shadow-[0_0_15px_rgba(113,75,103,0.4)]'
-                              : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
+                              : 'bg-white/5 border-white/10 text-white/80 hover:bg-white/10 hover:text-white'
                           }`}
                         >
                           {scope}
@@ -540,15 +552,17 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1.5">
+                    <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
                       Tell us about your project goals
                     </label>
                     <textarea
+                      id="contact-message"
+                      name="message"
                       rows={3}
                       placeholder="Briefly describe what you're building, target audience, key features, or current site URL..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/60 text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
                     />
                   </div>
 

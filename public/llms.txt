@@ -1,0 +1,38 @@
+﻿# Apex Tech
+
+> Apex Tech is a premier digital engineering and design studio specializing in modern React & Next.js web development, bespoke UI/UX design systems, technical SEO, Core Web Vitals 95+ speed optimization, and high-conversion landing pages.
+
+Apex Tech operates with direct engineer communication, clean client-owned code repositories, guaranteed delivery milestones, and a complimentary 30-day post-launch warranty.
+
+## Core Capabilities & Services
+- [Modern Web Development](https://its-sartaj.github.io/Apex-Tech/#services): High-performance, pixel-perfect web applications built with React 19, TypeScript, and Tailwind CSS.
+- [UI/UX & Brand Design](https://its-sartaj.github.io/Apex-Tech/#services): Digital design systems, interactive Figma prototypes, and conversion rate optimized user interfaces.
+- [Technical SEO & Speed Optimization](https://its-sartaj.github.io/Apex-Tech/#services): On-page SEO, structured Schema.org JSON-LD data, and Core Web Vitals speed tuning.
+- [Conversion Landing Pages](https://its-sartaj.github.io/Apex-Tech/#services): High-converting marketing landing pages engineered for lead generation.
+
+## Selected Works & Case Studies
+- [SaaS Cloud Management Platform](https://its-sartaj.github.io/Apex-Tech/#work): Multi-tenant cloud metrics dashboard with realtime visualization.
+- [Luxury Architecture Studio](https://its-sartaj.github.io/Apex-Tech/#work): Immersive brand showcase with smooth micro-interactions.
+- [FinTech Payments Portal](https://its-sartaj.github.io/Apex-Tech/#work): PCI-DSS compliant payment flow and onboarding experience.
+- [Medical Aesthetic Clinic](https://its-sartaj.github.io/Apex-Tech/#work): Local search #1 ranking patient consultation portal.
+
+## Execution Framework & Process
+- [Phase 1: Architecture & Scope](https://its-sartaj.github.io/Apex-Tech/#process): 24-hour scope, wireframes, and technology stack selection.
+- [Phase 2: High-Fidelity UI/UX Prototyping](https://its-sartaj.github.io/Apex-Tech/#process): Interactive Figma prototypes with client iteration loops.
+- [Phase 3: Production Engineering](https://its-sartaj.github.io/Apex-Tech/#process): Clean TypeScript development with 95+ Lighthouse score audit.
+- [Phase 4: Launch & 30-Day Warranty](https://its-sartaj.github.io/Apex-Tech/#process): Zero-downtime deployment, DNS configuration, and 30-day warranty.
+
+## Client Testimonials & Results
+- [Client Reviews](https://its-sartaj.github.io/Apex-Tech/#testimonials): 5.0 rating across 40+ shipped projects with verified client feedback.
+
+## Frequently Asked Questions
+- [Frequently Asked Questions](https://its-sartaj.github.io/Apex-Tech/#faq): Detailed answers regarding pricing, code ownership (100% client-owned), turnaround timelines, and warranty.
+
+## Direct Contact & Consultation
+- [Direct Phone](tel:+917979968347): +91 7979968347 (Mon–Sat 9:00 AM – 8:00 PM IST)
+- [Instant WhatsApp](https://wa.me/917979968347): Direct chat with engineering team
+- [Official Email](mailto:mrbeast797996@gmail.com): mrbeast797996@gmail.com
+- [Interactive Consultation Form](https://its-sartaj.github.io/Apex-Tech/#contact): 20-minute discovery request
+
+## Optional
+- [Full Context Documentation](https://its-sartaj.github.io/Apex-Tech/llms-full.txt): Complete uncompressed textual context for deep AI reasoning.

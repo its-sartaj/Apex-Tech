@@ -287,15 +287,18 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                     animate={shakeKeys.name > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                     transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                   >
-                    <label className="text-[11px] font-bold uppercase tracking-wider text-white/80 block mb-1">
+                    <label htmlFor="modal-name" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
                       Your Name *
                     </label>
                     <input
                       type="text"
+                      id="modal-name"
+                      name="name"
+                      autoComplete="name"
                       placeholder="e.g. Johnathan Smith"
                       value={name}
                       onChange={(e) => handleNameChange(e.target.value)}
-                      className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/40 focus:outline-none transition-all duration-200 ${
+                      className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/60 focus:outline-none transition-all duration-200 ${
                         errors.name
                           ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
                           : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
@@ -325,15 +328,18 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       animate={shakeKeys.email > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label className="text-[11px] font-bold uppercase tracking-wider text-white/80 block mb-1">
+                      <label htmlFor="modal-email" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
                         Email Address *
                       </label>
                       <input
                         type="email"
+                        id="modal-email"
+                        name="email"
+                        autoComplete="email"
                         placeholder="john@company.com"
                         value={email}
                         onChange={(e) => handleEmailChange(e.target.value)}
-                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/40 focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/60 focus:outline-none transition-all duration-200 ${
                           errors.email
                             ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
                             : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
@@ -361,15 +367,18 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       animate={shakeKeys.phone > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label className="text-[11px] font-bold uppercase tracking-wider text-white/80 block mb-1">
+                      <label htmlFor="modal-phone" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
                         Phone / WhatsApp
                       </label>
                       <input
                         type="tel"
+                        id="modal-phone"
+                        name="phone"
+                        autoComplete="tel"
                         placeholder="+91 7979968347"
                         value={phone}
                         onChange={(e) => handlePhoneChange(e.target.value)}
-                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/40 focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/60 focus:outline-none transition-all duration-200 ${
                           errors.phone
                             ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
                             : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
@@ -394,10 +403,12 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
 
                   {/* 3. Service Discipline Selection */}
                   <div>
-                    <label className="text-[11px] font-bold uppercase tracking-wider text-white/80 block mb-1">
+                    <label htmlFor="modal-service" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
                       Project Service Required
                     </label>
                     <select
+                      id="modal-service"
+                      name="service"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                       className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-[#161616] border border-white/15 text-sm text-white focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all cursor-pointer"
@@ -415,15 +426,17 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
 
                   {/* 4. Notes / Goals */}
                   <div>
-                    <label className="text-[11px] font-bold uppercase tracking-wider text-white/80 block mb-1">
-                      Project Scope & Goals
+                    <label htmlFor="modal-notes" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
+                      Project Scope &amp; Goals
                     </label>
                     <textarea
+                      id="modal-notes"
+                      name="notes"
                       rows={2}
                       placeholder="Brief details regarding timeline, budget, references, or key deliverables..."
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder-white/60 focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all resize-none"
                     />
                   </div>
 

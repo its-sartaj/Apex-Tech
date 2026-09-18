@@ -43,10 +43,43 @@
     <meta name="twitter:description" content="High-performing websites, modern UI/UX design systems, and organic search visibility for ambitious brands." />
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
 
-    <!-- Font Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <!-- Network & Font Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+    <!-- Non-blocking Web Fonts loading (FCP & SI optimization) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800;900&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800;900&amp;display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800;900&amp;display=swap" />
+    </noscript>
+
+    <!-- Inline Critical CSS for Instant Paint & Zero CLS -->
+    <style>
+      html {
+        background-color: #0b0c10;
+        color: #f3f4f6;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0b0c10;
+        color: #f3f4f6;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
 
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets & Knowledge Graph -->
     <script type="application/ld+json">

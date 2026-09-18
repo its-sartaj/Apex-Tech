@@ -185,6 +185,9 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
                 <div>
                   <input
                     type="password"
+                    id="admin-password-input"
+                    name="adminPassword"
+                    aria-label="Admin Password"
                     placeholder="Enter Admin Password"
                     value={pinInput}
                     onChange={(e) => {
@@ -218,44 +221,49 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
                 {/* Metric Badges */}
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium">
-                    Total: <strong className="text-white">{counts.total}</strong>
+                    Total: <strong className="text-white ml-1 font-mono">{inquiries.length}</strong>
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-medium">
-                    New: <strong>{counts.new}</strong>
+                  <span className="px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium">
+                    New: <strong className="ml-1 font-mono">{inquiries.filter((i) => i.status === 'new').length}</strong>
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-medium">
-                    Contacted: <strong>{counts.contacted}</strong>
+                  <span className="px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium">
+                    Contacted: <strong className="ml-1 font-mono">{inquiries.filter((i) => i.status === 'contacted').length}</strong>
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
-                    Closed: <strong>{counts.closed}</strong>
+                  <span className="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 font-medium">
+                    Closed: <strong className="ml-1 font-mono">{inquiries.filter((i) => i.status === 'closed').length}</strong>
                   </span>
                 </div>
 
-                {/* Actions */}
+                {/* Clear & Export Tools */}
                 <div className="flex items-center gap-2">
                   <button
-                    onClick={() => setInquiries(getInquiries())}
-                    className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/70 hover:text-white text-xs flex items-center gap-1.5 transition-colors"
-                    title="Refresh Inquiries"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" />
-                    <span className="hidden sm:inline">Refresh</span>
-                  </button>
-                  <button
-                    onClick={exportInquiriesCSV}
+                    onClick={exportToCSV}
                     disabled={inquiries.length === 0}
-                    className="px-3 py-2 rounded-xl bg-[#017E84] hover:bg-[#00A09D] text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white/90 hover:text-white transition-colors disabled:opacity-40"
+                    title="Export to CSV"
                   >
-                    <Download className="w-3.5 h-3.5" />
-                    <span>Export CSV</span>
+                    <Download className="w-3.5 h-3.5 text-[#00A09D]" />
+                    <span className="hidden sm:inline">Export CSV</span>
                   </button>
-                  {inquiries.length > 0 && (
+
+                  <button
+                    onClick={handleClearAll}
+                    disabled={inquiries.length === 0}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-xs font-semibold text-rose-300 hover:text-rose-200 transition-colors disabled:opacity-40"
+                    title="Clear All Inquiries"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Clear All</span>
+                  </button>
+
+                  {inquiries.length === 0 && (
                     <button
-                      onClick={handleClearAll}
-                      className="p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-xs transition-colors"
-                      title="Clear All Leads"
+                      onClick={handleLoadDemoData}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#714B67]/20 hover:bg-[#714B67]/40 border border-[#714B67]/40 text-xs font-semibold text-white transition-colors"
+                      title="Load Sample Leads"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      <Plus className="w-3.5 h-3.5 text-[#9B6C8F]" />
+                      <span className="hidden sm:inline">Load Demo Data</span>
                     </button>
                   )}
                 </div>
@@ -264,26 +272,31 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
               {/* Filter & Search Bar */}
               <div className="p-4 border-b border-white/10 flex flex-col sm:flex-row items-center gap-3">
                 <div className="relative flex-1 w-full">
-                  <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40" />
+                  <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-white/60" />
                   <input
                     type="text"
+                    id="admin-search-input"
+                    name="search"
+                    aria-label="Search inquiries by client name, email, phone or service"
                     placeholder="Search by client name, email, phone or service..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#714B67] transition-all"
+                    className="w-full pl-10 pr-4 py-2 rounded-xl bg-white/5 border border-white/15 text-xs text-white placeholder-white/60 focus:outline-none focus:border-[#714B67] transition-all"
                   />
                 </div>
 
                 <div className="flex items-center gap-1.5 w-full sm:w-auto shrink-0 overflow-x-auto pb-1 sm:pb-0">
-                  <Filter className="w-3.5 h-3.5 text-white/40 shrink-0 hidden sm:block" />
+                  <Filter className="w-3.5 h-3.5 text-white/60 shrink-0 hidden sm:block" />
                   {(['all', 'new', 'contacted', 'closed'] as const).map((filter) => (
                     <button
                       key={filter}
+                      type="button"
+                      aria-pressed={statusFilter === filter}
                       onClick={() => setStatusFilter(filter)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium capitalize transition-all shrink-0 ${
                         statusFilter === filter
                           ? 'bg-[#714B67] text-white font-bold'
-                          : 'bg-white/5 text-white/60 hover:text-white'
+                          : 'bg-white/5 text-white/80 hover:text-white'
                       }`}
                     >
                       {filter}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -8,11 +8,13 @@ import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import ConsultationModal from './components/ConsultationModal';
-import AdminModal from './components/AdminModal';
 import FloatingContactBar from './components/FloatingContactBar';
 import SectionDivider from './components/SectionDivider';
 import BackToTop from './components/BackToTop';
+
+// Non-critical modals are split into asynchronous chunks to cut initial TBT
+const ConsultationModal = lazy(() => import('./components/ConsultationModal'));
+const AdminModal = lazy(() => import('./components/AdminModal'));
 
 export default function App() {
   const [consultationOpen, setConsultationOpen] = useState(false);
@@ -95,23 +97,31 @@ export default function App() {
       {/* Floating Circular Back-to-Top Action */}
       <BackToTop />
 
-      {/* Consultation Discovery Modal */}
-      <ConsultationModal
-        isOpen={consultationOpen}
-        onClose={handleCloseConsultation}
-        defaultService={selectedServiceForModal}
-      />
+      {/* Consultation Discovery Modal (Code-split) */}
+      {consultationOpen && (
+        <Suspense fallback={null}>
+          <ConsultationModal
+            isOpen={consultationOpen}
+            onClose={handleCloseConsultation}
+            defaultService={selectedServiceForModal}
+          />
+        </Suspense>
+      )}
 
-      {/* Admin Panel Modal (Lead & Inquiry Management) */}
-      <AdminModal
-        isOpen={adminOpen}
-        onClose={() => {
-          setAdminOpen(false);
-          if (window.location.hash === '#admin') {
-            history.replaceState(null, '', window.location.pathname + window.location.search);
-          }
-        }}
-      />
+      {/* Admin Panel Modal (Code-split) */}
+      {adminOpen && (
+        <Suspense fallback={null}>
+          <AdminModal
+            isOpen={adminOpen}
+            onClose={() => {
+              setAdminOpen(false);
+              if (window.location.hash === '#admin') {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+              }
+            }}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

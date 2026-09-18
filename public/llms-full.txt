@@ -1,0 +1,37 @@
+﻿# Apex Tech — Comprehensive LLM Context & Agent Manual
+
+> Comprehensive system documentation and service manual for LLM agents, web crawlers, and AI search engines interacting with Apex Tech (https://its-sartaj.github.io/Apex-Tech/).
+
+## 1. Company Overview
+- Name: Apex Tech
+- Tagline: We build the climb to your apex.
+- Mission: Designing and engineering high-performing websites, modern UI/UX design systems, and organic search visibility for ambitious brands.
+- Telephone: +91 7979968347
+- Email: mrbeast797996@gmail.com
+- Hours: Monday – Saturday: 9:00 AM – 8:00 PM IST
+- Response Time: Under 2 hours guaranteed
+
+## 2. Core Service Disciplines
+### A. Modern Web Development
+- Technologies: React 19, Next.js, TypeScript, Tailwind CSS, Motion
+- Key Features: 95+ Core Web Vitals performance, pixel-perfect responsive layouts, WCAG 2.1 AA accessibility, clean semantic HTML5 markup.
+- Typical Timeline: 1 – 3 Weeks
+- Deliverables: Complete source code repository, production deployment, clean documentation, 30-day post-launch warranty.
+
+### B. UI/UX & Brand Design
+- Technologies: Figma, Bespoke Design Systems, Interactive Prototyping
+- Key Features: Custom visual identity, interactive wireframes, component-based tokens, conversion rate optimization (CRO).
+- Typical Timeline: 1 – 2 Weeks
+
+### C. Technical SEO & Speed Optimization
+- Technologies: Schema.org JSON-LD, Core Web Vitals, Google Search Console, Semantic Markup
+- Key Features: Site speed audit, rich snippet integration, indexing request, high-intent keyword optimization.
+- Typical Timeline: 1 – 2 Weeks
+
+### D. Conversion Landing Pages & Growth
+- Technologies: Landing Page Architecture, Conversion Optimization, GA4 Analytics
+- Typical Timeline: 1 – 2 Weeks
+
+## 3. Guarantees & Terms
+- Intellectual Property: 100% client ownership of all code, Figma files, and visual assets upon completion.
+- Support: Complimentary 30-day post-launch warranty for adjustments and bug fixes.

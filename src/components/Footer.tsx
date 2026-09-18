@@ -33,10 +33,10 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
 
           {/* Disciplines Col */}
           <div>
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">
+            <h3 className="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">
               Disciplines
-            </h4>
-            <ul className="space-y-2.5 text-xs text-white/70">
+            </h3>
+            <ul className="space-y-2.5 text-xs text-white/80">
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
                   Modern Web Development
@@ -44,12 +44,12 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  UI/UX & Brand Design
+                  UI/UX &amp; Brand Design
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  Technical SEO & Speed
+                  Technical SEO &amp; Speed
                 </a>
               </li>
               <li>
@@ -72,28 +72,28 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
 
           {/* Ascent Process Col */}
           <div>
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">
+            <h3 className="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">
               The Ascent
-            </h4>
-            <ul className="space-y-2.5 text-xs text-white/70">
+            </h3>
+            <ul className="space-y-2.5 text-xs text-white/80">
               <li>
                 <a href="#process" className="hover:text-white transition-colors">
-                  01 Discovery & Scope
+                  01 Discovery &amp; Scope
                 </a>
               </li>
               <li>
                 <a href="#process" className="hover:text-white transition-colors">
-                  02 Route & UI/UX Design
+                  02 Route &amp; UI/UX Design
                 </a>
               </li>
               <li>
                 <a href="#process" className="hover:text-white transition-colors">
-                  03 Agile Climb & Build
+                  03 Agile Climb &amp; Build
                 </a>
               </li>
               <li>
                 <a href="#process" className="hover:text-white transition-colors">
-                  04 Summit Launch & Scale
+                  04 Summit Launch &amp; Scale
                 </a>
               </li>
               <li>
@@ -106,9 +106,9 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
 
           {/* Direct Contact Col */}
           <div>
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">
+            <h3 className="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">
               Direct Contact
-            </h4>
+            </h3>
             <div className="space-y-3 text-xs">
               <a
                 href={`tel:${COMPANY_DETAILS.phoneTel}`}
@@ -120,7 +120,7 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
 
               <a
                 href={`mailto:${COMPANY_DETAILS.email}`}
-                className="flex items-center gap-2 text-white/80 hover:text-[#00A09D] transition-colors"
+                className="flex items-center gap-2 text-white/90 hover:text-[#00A09D] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-[#00A09D]" />
                 <span className="font-mono">{COMPANY_DETAILS.email}</span>
@@ -128,7 +128,7 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
 
               <a
                 href={`mailto:${COMPANY_DETAILS.secondaryEmail}`}
-                className="flex items-center gap-2 text-white/60 hover:text-[#00A09D] transition-colors"
+                className="flex items-center gap-2 text-white/80 hover:text-[#00A09D] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-[#00A09D]" />
                 <span className="font-mono">{COMPANY_DETAILS.secondaryEmail}</span>
@@ -148,7 +148,7 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
         </div>
 
         {/* Bottom copyright & back to top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/80">
           <div>
             © {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved. 100% client code ownership.
           </div>
@@ -160,7 +160,7 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
             {onOpenAdmin && (
               <button
                 onClick={onOpenAdmin}
-                className="hover:text-white transition-colors flex items-center gap-1 opacity-60 hover:opacity-100 cursor-pointer"
+                className="hover:text-white transition-colors flex items-center gap-1 opacity-80 hover:opacity-100 cursor-pointer"
                 title="Admin Portal (Leads & Inquiries)"
               >
                 <Lock className="w-3 h-3" />

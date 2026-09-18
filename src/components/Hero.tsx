@@ -228,11 +228,11 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
             {/* Trust Highlights Checkmarks */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-white/65 pt-2 font-medium"
+              className="flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-white/80 pt-2 font-medium"
             >
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#017E84]" />
-                <span>100% Code & Asset Ownership</span>
+                <span>100% Code &amp; Asset Ownership</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#017E84]" />
@@ -240,7 +240,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
               </div>
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#714B67]" />
-                <span>Fixed Scope & Guaranteed Milestones</span>
+                <span>Fixed Scope &amp; Guaranteed Milestones</span>
               </div>
             </motion.div>
           </motion.div>
@@ -285,7 +285,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
               {/* Header inside stage */}
               <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-2">
                 <Logo size="sm" subtitleText="Engineering Lab" />
-                <span className="text-[10px] font-bold tracking-widest uppercase text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
+                <span className="text-[10px] font-bold tracking-widest uppercase text-white/80 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#017E84]" />
                   <span>Apex Core v4.8</span>
                 </span>
@@ -331,14 +331,14 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   {/* Waypoint 1: Discovery */}
                   <circle cx="160" cy="150" r="6" fill="#017E84" />
                   <circle cx="160" cy="150" r="12" fill="#017E84" fillOpacity="0.2" className="animate-pulse" />
-                  <text x="135" y="135" fill="rgba(255,255,255,0.6)" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
+                  <text x="135" y="135" fill="#FFFFFF" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
                     Phase 1
                   </text>
 
                   {/* Waypoint 2: Prototype */}
                   <circle cx="220" cy="210" r="6" fill="#017E84" />
                   <circle cx="220" cy="210" r="12" fill="#017E84" fillOpacity="0.2" className="animate-pulse" />
-                  <text x="232" y="215" fill="rgba(255,255,255,0.6)" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
+                  <text x="232" y="215" fill="#FFFFFF" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
                     Phase 2
                   </text>
 
@@ -357,7 +357,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
               {/* Status pill with animated indicator */}
               <div className="mt-3 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 space-y-3">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-white/70 font-semibold flex items-center gap-1.5">
+                  <span className="text-white/85 font-semibold flex items-center gap-1.5">
                     <TrendingUp className="w-3.5 h-3.5 text-[#017E84]" />
                     <span>Sprint Capacity Status:</span>
                   </span>
@@ -366,14 +366,14 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                     Open for Q3/Q4 Projects
                   </span>
                 </div>
-                <div className="text-xs text-white/65 leading-relaxed">
-                  Currently accepting new web design & engineering, UI/UX systems, and search visibility projects. Average response: 45 minutes.
+                <div className="text-xs text-white/80 leading-relaxed">
+                  Currently accepting new web design &amp; engineering, UI/UX systems, and search visibility projects. Average response: 45 minutes.
                 </div>
               </div>
 
               {/* Contact mini footer inside card */}
               <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs text-white/80">
-                <span className="font-semibold uppercase tracking-wider text-[10px] text-white/50">Direct Engineer Desk:</span>
+                <span className="font-semibold uppercase tracking-wider text-[10px] text-white/80">Direct Engineer Desk:</span>
                 <a
                   href={`tel:${COMPANY_DETAILS.phoneTel}`}
                   className="font-mono text-white hover:text-[#017E84] font-bold tracking-wide transition-colors"

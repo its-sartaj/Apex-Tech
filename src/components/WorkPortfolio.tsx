@@ -46,46 +46,54 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+          <div role="tablist" aria-label="Filter case studies" className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
             <button
+              role="tab"
+              aria-selected={activeFilter === 'all'}
               onClick={() => setActiveFilter('all')}
               className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
                 activeFilter === 'all'
                   ? 'bg-[#714B67] text-white shadow-[0_0_15px_rgba(113,75,103,0.4)]'
-                  : 'bg-[#14101A] border border-white/10 text-white/70 hover:text-white hover:border-[#714B67]'
+                  : 'bg-[#14101A] border border-white/10 text-white/80 hover:text-white hover:border-[#714B67]'
               }`}
             >
               All Work ({CASE_STUDIES.length})
             </button>
             <button
+              role="tab"
+              aria-selected={activeFilter === 'web'}
               onClick={() => setActiveFilter('web')}
               className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
                 activeFilter === 'web'
                   ? 'bg-[#714B67] text-white shadow-[0_0_15px_rgba(113,75,103,0.4)]'
-                  : 'bg-[#14101A] border border-white/10 text-white/70 hover:text-white hover:border-[#714B67]'
+                  : 'bg-[#14101A] border border-white/10 text-white/80 hover:text-white hover:border-[#714B67]'
               }`}
             >
               Websites
             </button>
             <button
+              role="tab"
+              aria-selected={activeFilter === 'uiux'}
               onClick={() => setActiveFilter('uiux')}
               className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
                 activeFilter === 'uiux'
                   ? 'bg-[#714B67] text-white shadow-[0_0_15px_rgba(113,75,103,0.4)]'
-                  : 'bg-[#14101A] border border-white/10 text-white/70 hover:text-white hover:border-[#714B67]'
+                  : 'bg-[#14101A] border border-white/10 text-white/80 hover:text-white hover:border-[#714B67]'
               }`}
             >
-              UI/UX & Brand
+              UI/UX &amp; Brand
             </button>
             <button
+              role="tab"
+              aria-selected={activeFilter === 'seo'}
               onClick={() => setActiveFilter('seo')}
               className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
                 activeFilter === 'seo'
                   ? 'bg-[#714B67] text-white shadow-[0_0_15px_rgba(113,75,103,0.4)]'
-                  : 'bg-[#14101A] border border-white/10 text-white/70 hover:text-white hover:border-[#714B67]'
+                  : 'bg-[#14101A] border border-white/10 text-white/80 hover:text-white hover:border-[#714B67]'
               }`}
             >
-              SEO & Speed
+              SEO &amp; Speed
             </button>
           </div>
         </motion.div>
@@ -100,14 +108,25 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-[#11141C] rounded-3xl overflow-hidden border border-white/10 hover:border-[#714B67]/40 hover:shadow-[0_10px_35px_rgba(113,75,103,0.15)] transition-all duration-300 flex flex-col group cursor-pointer"
+              className="bg-[#11141C] rounded-3xl overflow-hidden border border-white/10 hover:border-[#714B67]/40 hover:shadow-[0_10px_35px_rgba(113,75,103,0.15)] transition-all duration-300 flex flex-col group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#714B67]"
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${project.title} case study details`}
               onClick={() => handleOpenDetail(project)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleOpenDetail(project);
+                }
+              }}
             >
               {/* Photo Showcase Container */}
               <div className="relative h-60 w-full overflow-hidden bg-[#14101A]">
                 <img
                   src={project.imageUrl}
                   alt={`${project.title} - ${project.category.toUpperCase()} Project by Apex Tech`}
+                  width={600}
+                  height={400}
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
@@ -233,6 +252,8 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                     : selectedCaseStudy.imageUrl
                 }
                 alt={`${selectedCaseStudy.title} - ${selectedCaseStudy.client} Case Study`}
+                width={1000}
+                height={600}
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -255,15 +276,16 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               {/* Photo Gallery Thumbnails if Available */}
               {selectedCaseStudy.galleryImages && selectedCaseStudy.galleryImages.length > 1 && (
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-white/60 mb-2 flex items-center gap-1.5">
+                  <div className="text-xs font-bold uppercase tracking-wider text-white/80 mb-2 flex items-center gap-1.5">
                     <ImageIcon className="w-3.5 h-3.5 text-[#017E84]" />
-                    <span>Project Visuals & Screenshots:</span>
+                    <span>Project Visuals &amp; Screenshots:</span>
                   </div>
                   <div className="flex items-center gap-3 overflow-x-auto pb-2">
                     {selectedCaseStudy.galleryImages.map((img, idx) => (
                       <button
                         key={idx}
                         onClick={() => setActiveGalleryIndex(idx)}
+                        aria-label={`View screenshot ${idx + 1} for ${selectedCaseStudy.title}`}
                         className={`relative w-24 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all ${
                           activeGalleryIndex === idx ? 'border-[#714B67] scale-105 shadow-[0_0_10px_rgba(113,75,103,0.6)]' : 'border-white/20 opacity-70 hover:opacity-100'
                         }`}
@@ -271,6 +293,10 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                         <img
                           src={img}
                           alt={`Thumbnail ${idx + 1}`}
+                          width={96}
+                          height={64}
+                          loading="lazy"
+                          decoding="async"
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover"
                         />

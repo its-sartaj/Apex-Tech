@@ -125,6 +125,8 @@ export default function Header({ onOpenConsultation, onOpenAdmin }: HeaderProps)
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-white hover:bg-[#14101A] transition-colors"
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation-menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -136,6 +138,9 @@ export default function Header({ onOpenConsultation, onOpenAdmin }: HeaderProps)
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            id="mobile-navigation-menu"
+            role="navigation"
+            aria-label="Mobile navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

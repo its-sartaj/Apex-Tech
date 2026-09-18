@@ -163,10 +163,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: 'web',
     summary: 'A fast, modular website with drag-and-drop CMS blocks that reduced page load times to 0.6s and boosted visitor conversions by 48%.',
     fullDescription: 'Designed and engineered an enterprise modular web storefront with custom product block builders, live color theming, and instant checkout flows inspired by the simplicity of modern website building suites.',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75&fm=webp',
     galleryImages: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75&fm=webp',
+      'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=800&q=75&fm=webp'
     ],
     impactMetrics: [
       { label: 'Page Load Speed', value: '0.6s (Core Vitals 100)' },
@@ -184,10 +184,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: 'web',
     summary: 'Integrated appointment scheduling, customer portal, and mobile-first website application with direct WhatsApp booking.',
     fullDescription: 'Engineered a modern web platform integrating dynamic service blocks, booking widgets, team rosters, and responsive lead capture with 100% Core Web Vitals speed scores.',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75&fm=webp',
     galleryImages: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75&fm=webp',
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=75&fm=webp'
     ],
     impactMetrics: [
       { label: 'Monthly Visitors', value: '35,000+ unique' },
@@ -205,10 +205,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: 'seo',
     summary: 'Engineered technical schema architecture and semantic structured content resulting in 3.4x organic search leads.',
     fullDescription: 'Restructured the website with semantic HTML5 tags, JSON-LD business schema, optimized meta descriptions, and interactive calculation tools ranking on page 1 of Google.',
-    imageUrl: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=75&fm=webp',
     galleryImages: [
-      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=75&fm=webp',
+      'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&w=800&q=75&fm=webp'
     ],
     impactMetrics: [
       { label: 'Organic Traffic', value: '340% increase' },
@@ -226,10 +226,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: 'uiux',
     summary: 'A minimalist visual portfolio featuring high-res imagery, interactive blueprint viewports, and typographic elegance.',
     fullDescription: 'Crafted a bespoke design system and responsive web portfolio highlighting award-winning residential and commercial architectural projects with fluid layout transitions.',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=75&fm=webp',
     galleryImages: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=75&fm=webp',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=75&fm=webp'
     ],
     impactMetrics: [
       { label: 'Page Load Speed', value: '0.5s instant' },
@@ -247,10 +247,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: 'web',
     summary: 'Treatment guides, doctor credentials, and direct WhatsApp & phone consultation scheduling.',
     fullDescription: 'Designed an elegant, accessible website for a premier medical aesthetic clinic. Features interactive before/after treatment guides, doctor profiles, and direct click-to-call and WhatsApp appointment booking.',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=75&fm=webp',
     galleryImages: [
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=75&fm=webp',
+      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=75&fm=webp'
     ],
     impactMetrics: [
       { label: 'Appointment Inquiries', value: '2.9x increase' },
@@ -268,10 +268,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: 'uiux',
     summary: 'High-conversion SaaS product website with interactive app switcher previews, live templates, and clear lead capture.',
     fullDescription: 'Transformed an enterprise suite into a crisp, modern marketing website with interactive building blocks, app integrations, and friction-free inquiry flows.',
-    imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=75&fm=webp',
     galleryImages: [
-      'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=75&fm=webp',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75&fm=webp'
     ],
     impactMetrics: [
       { label: 'Demo Inquiries', value: '+78% increase' },
