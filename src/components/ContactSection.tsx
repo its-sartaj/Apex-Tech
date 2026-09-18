@@ -137,9 +137,9 @@ Message: ${message || 'I would like to discuss a new digital project with your t
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#080a0e] relative overflow-hidden">
+    <section id="contact" className="py-20 bg-white relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#714B67]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#714B67]/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -150,13 +150,13 @@ Message: ${message || 'I would like to discuss a new digital project with your t
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mb-16"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-[#00A09D] mb-3 block">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#017E84] mb-3 block">
             Direct Discovery & Contact
           </span>
-          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight">
             Ready to start the climb to your apex?
           </h2>
-          <p className="text-base sm:text-lg text-white/70 mt-3 font-normal">
+          <p className="text-base sm:text-lg text-slate-600 mt-3 font-normal">
             Reach out directly by phone, WhatsApp, or email. We respond to all project inquiries within 2 hours.
           </p>
         </motion.div>
@@ -175,21 +175,21 @@ Message: ${message || 'I would like to discuss a new digital project with your t
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#11141C] rounded-3xl p-7 border border-[#714B67]/30 space-y-4 shadow-xl"
+              className="bg-slate-50 rounded-3xl p-7 border border-slate-200 space-y-4 shadow-md"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-[#714B67]/20 border border-[#714B67]/40 text-[#9B6C8F] flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-[#9B6C8F]" />
+                <div className="w-12 h-12 rounded-2xl bg-[#714B67]/10 border border-[#714B67]/30 text-[#714B67] flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-[#714B67]" />
                 </div>
                 <button
                   onClick={handleCopyPhone}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs font-bold text-white/80 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
                   title="Copy Phone Number"
                 >
                   {copiedPhone ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-[#00A09D]" />
-                      <span className="text-[#00A09D]">Copied!</span>
+                      <Check className="w-3.5 h-3.5 text-[#017E84]" />
+                      <span className="text-[#017E84]">Copied!</span>
                     </>
                   ) : (
                     <>
@@ -201,28 +201,28 @@ Message: ${message || 'I would like to discuss a new digital project with your t
               </div>
 
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-white/60">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                   Direct Telephone Line
                 </span>
-                <div className="font-display font-black text-2xl sm:text-3xl text-white mt-0.5">
+                <div className="font-display font-black text-2xl sm:text-3xl text-slate-900 mt-0.5">
                   <a
                     href={`tel:${COMPANY_DETAILS.phoneTel}`}
-                    className="hover:text-[#00A09D] transition-colors font-mono"
+                    className="hover:text-[#714B67] transition-colors font-mono"
                   >
                     {COMPANY_DETAILS.phone}
                   </a>
                 </div>
-                <p className="text-xs text-white/60 mt-1 font-normal">
+                <p className="text-xs text-slate-600 mt-1 font-normal">
                   Direct line to engineering & project leadership. Available Mon–Sat 9AM–8PM IST.
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-white/10 flex items-center gap-3">
+              <div className="pt-3 border-t border-slate-200 flex items-center gap-3">
                 <motion.a
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   href={`tel:${COMPANY_DETAILS.phoneTel}`}
-                  className="flex-1 py-3 px-4 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white text-xs font-bold text-center transition-colors shadow-[0_0_15px_rgba(113,75,103,0.4)]"
+                  className="flex-1 py-3 px-4 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white text-xs font-bold text-center transition-colors shadow-sm"
                 >
                   Call {COMPANY_DETAILS.phoneRaw}
                 </motion.a>
@@ -232,7 +232,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                   href={COMPANY_DETAILS.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-3 px-4 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold text-center transition-colors flex items-center justify-center gap-1.5 shadow-md"
+                  className="flex-1 py-3 px-4 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold text-center transition-colors flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>WhatsApp</span>
@@ -244,21 +244,21 @@ Message: ${message || 'I would like to discuss a new digital project with your t
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#11141C] rounded-3xl p-7 border border-white/10 space-y-4 shadow-xl"
+              className="bg-slate-50 rounded-3xl p-7 border border-slate-200 space-y-4 shadow-md"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-[#017E84]/20 border border-[#017E84]/40 text-[#00A09D] flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-[#00A09D]" />
+                <div className="w-12 h-12 rounded-2xl bg-[#017E84]/10 border border-[#017E84]/30 text-[#017E84] flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-[#017E84]" />
                 </div>
                 <button
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs font-bold text-white/80 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
                   title="Copy Email Address"
                 >
                   {copiedEmail ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-[#00A09D]" />
-                      <span className="text-[#00A09D]">Copied!</span>
+                      <Check className="w-3.5 h-3.5 text-[#017E84]" />
+                      <span className="text-[#017E84]">Copied!</span>
                     </>
                   ) : (
                     <>
@@ -270,28 +270,28 @@ Message: ${message || 'I would like to discuss a new digital project with your t
               </div>
 
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-white/60">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                   Official Email Desks
                 </span>
-                <div className="font-display font-bold text-xl text-white mt-0.5 font-mono">
+                <div className="font-display font-bold text-xl text-slate-900 mt-0.5 font-mono">
                   <a
                     href={`mailto:${COMPANY_DETAILS.email}`}
-                    className="hover:text-[#00A09D] transition-colors"
+                    className="hover:text-[#714B67] transition-colors"
                   >
                     {COMPANY_DETAILS.email}
                   </a>
                 </div>
-                <div className="text-xs text-white/60 mt-1 font-mono">
-                  Secondary: <a href={`mailto:${COMPANY_DETAILS.secondaryEmail}`} className="underline hover:text-[#00A09D]">{COMPANY_DETAILS.secondaryEmail}</a>
+                <div className="text-xs text-slate-600 mt-1 font-mono">
+                  Secondary: <a href={`mailto:${COMPANY_DETAILS.secondaryEmail}`} className="underline hover:text-[#714B67]">{COMPANY_DETAILS.secondaryEmail}</a>
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-white/10">
+              <div className="pt-3 border-t border-slate-200">
                 <motion.a
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   href={`mailto:${COMPANY_DETAILS.email}?subject=Project%20Inquiry%20-%20Apex%20Tech`}
-                  className="w-full block py-2.5 px-4 rounded-full bg-white/10 border border-white/15 hover:bg-[#017E84] text-white text-xs font-bold text-center transition-colors"
+                  className="w-full block py-2.5 px-4 rounded-full bg-white border border-slate-200 hover:bg-[#017E84] hover:text-white text-slate-800 text-xs font-bold text-center transition-colors shadow-2xs"
                 >
                   Send Email Message →
                 </motion.a>
@@ -299,13 +299,13 @@ Message: ${message || 'I would like to discuss a new digital project with your t
             </motion.div>
 
             {/* Operating Details Card */}
-            <div className="p-6 rounded-2xl bg-[#11141C] border border-white/10 space-y-3 text-xs text-white/70">
-              <div className="flex items-center gap-2.5 text-white font-semibold">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs text-slate-600 shadow-2xs">
+              <div className="flex items-center gap-2.5 text-slate-900 font-semibold">
                 <Clock className="w-4 h-4 text-[#714B67]" />
                 <span>Operating Hours: {COMPANY_DETAILS.hours}</span>
               </div>
-              <div className="flex items-center gap-2.5 text-white font-semibold">
-                <Sparkles className="w-4 h-4 text-[#00A09D]" />
+              <div className="flex items-center gap-2.5 text-slate-900 font-semibold">
+                <Sparkles className="w-4 h-4 text-[#017E84]" />
                 <span>Response Guarantee: {COMPANY_DETAILS.responseTime}</span>
               </div>
             </div>
@@ -317,7 +317,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 bg-[#11141C] text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-[#714B67]/30 relative overflow-hidden"
+            className="lg:col-span-7 bg-slate-50 text-slate-900 rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-200 relative overflow-hidden"
           >
             <AnimatePresence mode="wait">
               {isSubmitted ? (
@@ -332,15 +332,15 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', damping: 12, stiffness: 200 }}
-                    className="w-16 h-16 rounded-full bg-[#017E84]/20 text-[#00A09D] mx-auto flex items-center justify-center border border-[#017E84]/40"
+                    className="w-16 h-16 rounded-full bg-[#017E84]/10 text-[#017E84] mx-auto flex items-center justify-center border border-[#017E84]/30"
                   >
                     <CheckCircle2 className="w-10 h-10" />
                   </motion.div>
-                  <h3 className="font-display font-extrabold text-3xl text-white">
+                  <h3 className="font-display font-extrabold text-3xl text-slate-900">
                     Message Sent Successfully!
                   </h3>
-                  <p className="text-white/70 text-sm max-w-md mx-auto leading-relaxed font-normal">
-                    Thank you, <strong className="text-white">{name}</strong>. An Apex Tech solutions architect will review your project requirements and get in touch at <strong className="text-white">{email}</strong> / <strong className="text-white font-mono">{phone || 'your phone'}</strong> within 2 hours.
+                  <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed font-normal">
+                    Thank you, <strong className="text-slate-900">{name}</strong>. An Apex Tech solutions architect will review your project requirements and get in touch at <strong className="text-slate-900">{email}</strong> / <strong className="text-slate-900 font-mono">{phone || 'your phone'}</strong> within 2 hours.
                   </p>
                   <div className="pt-4 flex flex-wrap justify-center gap-3">
                     <motion.a
@@ -349,7 +349,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       href={getWhatsAppSubmitUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 rounded-full bg-[#25D366] text-white text-xs font-bold hover:bg-[#1EBE5D] transition-colors flex items-center gap-2 shadow-lg"
+                      className="px-6 py-3 rounded-full bg-[#25D366] text-white text-xs font-bold hover:bg-[#1EBE5D] transition-colors flex items-center gap-2 shadow-md"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>Also open on WhatsApp</span>
@@ -358,7 +358,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
                       onClick={() => setIsSubmitted(false)}
-                      className="px-6 py-3 rounded-full bg-white/10 text-white text-xs font-bold hover:bg-white/20 transition-colors"
+                      className="px-6 py-3 rounded-full bg-slate-200 text-slate-800 text-xs font-bold hover:bg-slate-300 transition-colors cursor-pointer"
                     >
                       Send Another Inquiry
                     </motion.button>
@@ -374,11 +374,11 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                   onSubmit={handleSubmit}
                   className="space-y-5"
                 >
-                  <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#00A09D]">
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#017E84]">
                       Project Discovery & Scope Form
                     </span>
-                    <span className="text-xs text-white/50">
+                    <span className="text-xs text-slate-500">
                       Average reply: 45 mins
                     </span>
                   </div>
@@ -390,7 +390,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       animate={shakeKeys.name > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
+                      <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider text-slate-800 block mb-1.5">
                         Your Name *
                       </label>
                       <input
@@ -401,10 +401,10 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                         placeholder="e.g. Rahul Sharma"
                         value={name}
                         onChange={(e) => handleNameChange(e.target.value)}
-                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/60 text-sm focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-4 py-3 rounded-xl text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none transition-all duration-200 ${
                           errors.name
-                            ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
-                            : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
+                            ? 'bg-rose-50 border-2 border-rose-500 focus:border-rose-600 focus:ring-2 focus:ring-rose-500/20'
+                            : 'bg-white border border-slate-300 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
                         }`}
                       />
                       <AnimatePresence>
@@ -414,7 +414,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                             animate={{ opacity: 1, y: 0, height: 'auto' }}
                             exit={{ opacity: 0, y: -4, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="flex items-center gap-1.5 text-xs text-rose-400 font-medium mt-1.5"
+                            className="flex items-center gap-1.5 text-xs text-rose-600 font-medium mt-1.5"
                           >
                             <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                             <span>{errors.name}</span>
@@ -429,7 +429,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       animate={shakeKeys.email > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
+                      <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider text-slate-800 block mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -440,10 +440,10 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                         placeholder="you@company.com"
                         value={email}
                         onChange={(e) => handleEmailChange(e.target.value)}
-                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/60 text-sm focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-4 py-3 rounded-xl text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none transition-all duration-200 ${
                           errors.email
-                            ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
-                            : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
+                            ? 'bg-rose-50 border-2 border-rose-500 focus:border-rose-600 focus:ring-2 focus:ring-rose-500/20'
+                            : 'bg-white border border-slate-300 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
                         }`}
                       />
                       <AnimatePresence>
@@ -453,7 +453,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                             animate={{ opacity: 1, y: 0, height: 'auto' }}
                             exit={{ opacity: 0, y: -4, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="flex items-center gap-1.5 text-xs text-rose-400 font-medium mt-1.5"
+                            className="flex items-center gap-1.5 text-xs text-rose-600 font-medium mt-1.5"
                           >
                             <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                             <span>{errors.email}</span>
@@ -470,7 +470,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       animate={shakeKeys.phone > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label htmlFor="contact-phone" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
+                      <label htmlFor="contact-phone" className="text-xs font-bold uppercase tracking-wider text-slate-800 block mb-1.5">
                         Phone / WhatsApp Number
                       </label>
                       <input
@@ -481,10 +481,10 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                         placeholder="+91 98765 43210"
                         value={phone}
                         onChange={(e) => handlePhoneChange(e.target.value)}
-                        className={`w-full px-4 py-3 rounded-xl text-white placeholder-white/60 text-sm focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-4 py-3 rounded-xl text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none transition-all duration-200 ${
                           errors.phone
-                            ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
-                            : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
+                            ? 'bg-rose-50 border-2 border-rose-500 focus:border-rose-600 focus:ring-2 focus:ring-rose-500/20'
+                            : 'bg-white border border-slate-300 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
                         }`}
                       />
                       <AnimatePresence>
@@ -494,7 +494,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                             animate={{ opacity: 1, y: 0, height: 'auto' }}
                             exit={{ opacity: 0, y: -4, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="flex items-center gap-1.5 text-xs text-rose-400 font-medium mt-1.5"
+                            className="flex items-center gap-1.5 text-xs text-rose-600 font-medium mt-1.5"
                           >
                             <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                             <span>{errors.phone}</span>
@@ -504,7 +504,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                     </motion.div>
 
                     <div>
-                      <label htmlFor="contact-service" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
+                      <label htmlFor="contact-service" className="text-xs font-bold uppercase tracking-wider text-slate-800 block mb-1.5">
                         Discipline of Interest
                       </label>
                       <select
@@ -512,14 +512,14 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                         name="service"
                         value={service}
                         onChange={(e) => setService(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#14101A] border border-white/15 text-white text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
                       >
                         {SERVICES.map((s) => (
-                          <option key={s.id} value={s.title} className="bg-[#14101A] text-white">
+                          <option key={s.id} value={s.title} className="bg-white text-slate-900">
                             {s.title}
                           </option>
                         ))}
-                        <option value="Complete Web & SEO Package" className="bg-[#14101A] text-white">
+                        <option value="Complete Web & SEO Package" className="bg-white text-slate-900">
                           Complete Web &amp; SEO Package (Web + UI/UX + SEO)
                         </option>
                       </select>
@@ -527,7 +527,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                   </div>
 
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-800 block mb-1.5">
                       Target Project Scale
                     </span>
                     <div className="grid grid-cols-3 gap-2">
@@ -539,10 +539,10 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setProjectScope(scope)}
-                          className={`py-2.5 px-3 rounded-xl text-xs font-bold border transition-all truncate ${
+                          className={`py-2.5 px-3 rounded-xl text-xs font-bold border transition-all truncate cursor-pointer ${
                             projectScope === scope
-                              ? 'bg-[#714B67] text-white border-[#714B67] shadow-[0_0_15px_rgba(113,75,103,0.4)]'
-                              : 'bg-white/5 border-white/10 text-white/80 hover:bg-white/10 hover:text-white'
+                              ? 'bg-[#714B67] text-white border-[#714B67] shadow-sm'
+                              : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                           }`}
                         >
                           {scope}
@@ -552,7 +552,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                   </div>
 
                   <div>
-                    <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider text-white/90 block mb-1.5">
+                    <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider text-slate-800 block mb-1.5">
                       Tell us about your project goals
                     </label>
                     <textarea
@@ -562,7 +562,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       placeholder="Briefly describe what you're building, target audience, key features, or current site URL..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/60 text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
                     />
                   </div>
 
@@ -572,7 +572,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       whileTap={{ scale: 0.98 }}
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:flex-1 py-3.5 px-6 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(113,75,103,0.4)] disabled:opacity-60 cursor-pointer"
+                      className="w-full sm:flex-1 py-3.5 px-6 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm disabled:opacity-60 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
@@ -590,14 +590,14 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       href={getWhatsAppSubmitUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-md"
+                      className="w-full sm:w-auto py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>Send via WhatsApp</span>
                     </motion.a>
                   </div>
 
-                  <div className="text-center text-[11px] text-white/50 pt-2 font-normal">
+                  <div className="text-center text-[11px] text-slate-500 pt-2 font-normal">
                     🔒 Direct engineering response within 2 hours. 100% confidential.
                   </div>
                 </motion.form>

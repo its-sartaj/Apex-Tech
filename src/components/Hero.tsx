@@ -9,13 +9,13 @@ interface HeroProps {
 
 export default function Hero({ onOpenConsultation }: HeroProps) {
   return (
-    <section id="hero-section" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#0b0c10] overflow-hidden">
+    <section id="hero-section" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-white overflow-hidden">
       {/* Animated Subtle Ambient Light Canvas (Pure GPU CSS - Zero TBT) */}
       <div
-        className="absolute -top-24 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#714B67]/25 via-[#017E84]/15 to-transparent rounded-full blur-[120px] pointer-events-none -z-10 animate-ambient-1"
+        className="absolute -top-24 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#714B67]/10 via-[#017E84]/10 to-transparent rounded-full blur-[120px] pointer-events-none -z-10 animate-ambient-1"
       />
       <div
-        className="absolute top-48 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-[#714B67]/20 via-[#017E84]/10 to-transparent rounded-full blur-[100px] pointer-events-none -z-10 animate-ambient-2"
+        className="absolute top-48 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-[#714B67]/10 via-[#017E84]/5 to-transparent rounded-full blur-[100px] pointer-events-none -z-10 animate-ambient-2"
       />
 
       {/* Decorative Floating Background Particles (Pure CSS) */}
@@ -23,7 +23,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
         {[...Array(6)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-white/30 animate-pulse"
+            className="absolute w-1.5 h-1.5 rounded-full bg-slate-300/40 animate-pulse"
             style={{
               top: `${15 + i * 14}%`,
               left: `${10 + (i * 17) % 80}%`,
@@ -40,7 +40,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
             {/* Eyebrow badge with glowing pulse */}
             <div>
               <div
-                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#017E84]/15 border border-[#017E84]/40 text-[#00A09D] text-xs font-bold uppercase tracking-widest shadow-sm cursor-default"
+                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#017E84]/10 border border-[#017E84]/30 text-[#017E84] text-xs font-bold uppercase tracking-widest shadow-sm cursor-default"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#017E84] opacity-75" />
@@ -52,7 +52,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
             {/* Main Headline with Instant Paint (Crucial LCP element) */}
             <h1
-              className="font-display font-extrabold text-4xl sm:text-5xl lg:text-7xl text-[#F5F5F5] tracking-tight leading-[1.05]"
+              className="font-display font-extrabold text-4xl sm:text-5xl lg:text-7xl text-slate-900 tracking-tight leading-[1.05]"
             >
               We build the climb <br />
               <span className="bg-gradient-to-r from-[#714B67] via-[#9B6C8F] to-[#017E84] bg-clip-text text-transparent relative inline-block">
@@ -75,19 +75,19 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
             {/* Lead paragraph */}
             <p
-              className="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed font-normal"
+              className="text-lg sm:text-xl text-slate-600 max-w-2xl leading-relaxed font-normal"
             >
               Apex Tech designs and builds high-performing websites, modern UI/UX design systems, and organic search visibility for ambitious brands ready to reach further — backed by direct communication, clean code, and zero agency fluff.
             </p>
 
             {/* Direct Contact Bar Highlight Card */}
             <div
-              className="p-4 sm:p-5 rounded-2xl bg-[#14101A]/90 backdrop-blur-md border border-[#714B67]/30 shadow-2xl max-w-xl relative overflow-hidden group"
+              className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-md max-w-xl relative overflow-hidden group"
             >
               {/* Subtle card edge glow */}
               <div className="absolute top-0 left-0 w-32 h-1 bg-gradient-to-r from-[#714B67] to-[#017E84] opacity-80 group-hover:w-full transition-all duration-700" />
 
-              <div className="text-[11px] font-bold uppercase tracking-widest text-white/60 mb-2.5 flex items-center gap-1.5">
+              <div className="text-[11px] font-bold uppercase tracking-widest text-slate-600 mb-2.5 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#017E84]" />
                 <span>Direct Contact Line • Zero Middleware</span>
               </div>
@@ -96,9 +96,9 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   whileHover={{ scale: 1.04, y: -1 }}
                   whileTap={{ scale: 0.96 }}
                   href={`tel:${COMPANY_DETAILS.phoneTel}`}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#714B67]/20 border border-[#714B67]/50 text-white font-bold text-sm hover:bg-[#714B67] transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#714B67]/10 border border-[#714B67]/30 text-[#714B67] font-bold text-sm hover:bg-[#714B67] hover:text-white transition-all shadow-sm"
                 >
-                  <Phone className="w-4 h-4 text-[#00A09D]" />
+                  <Phone className="w-4 h-4 text-[#017E84]" />
                   <span className="font-mono tracking-tight">Call: {COMPANY_DETAILS.phone}</span>
                 </motion.a>
 
@@ -106,9 +106,9 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   whileHover={{ scale: 1.04, y: -1 }}
                   whileTap={{ scale: 0.96 }}
                   href={`mailto:${COMPANY_DETAILS.email}`}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d1717] border border-[#017E84]/30 text-white font-semibold text-sm hover:border-[#017E84] hover:text-[#00A09D] transition-all"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#017E84]/10 border border-[#017E84]/30 text-[#017E84] font-semibold text-sm hover:bg-[#017E84] hover:text-white transition-all"
                 >
-                  <Mail className="w-4 h-4 text-[#00A09D]" />
+                  <Mail className="w-4 h-4 text-[#017E84]" />
                   <span>{COMPANY_DETAILS.email}</span>
                 </motion.a>
 
@@ -118,10 +118,10 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   href={COMPANY_DETAILS.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#017E84]/20 border border-[#017E84]/50 text-[#00A09D] font-bold text-xs hover:bg-[#017E84] hover:text-white transition-all"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs hover:bg-emerald-600 hover:text-white transition-all"
                   title="WhatsApp Chat"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4 text-emerald-600" />
                   <span>WhatsApp</span>
                 </motion.a>
               </div>
@@ -134,7 +134,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={onOpenConsultation}
-                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white text-base font-bold transition-all shadow-[0_0_25px_rgba(113,75,103,0.5)] relative overflow-hidden group"
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white text-base font-bold transition-all shadow-[0_4px_16px_rgba(113,75,103,0.35)] relative overflow-hidden group"
               >
                 <span className="relative z-10">Start a project</span>
                 <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -144,7 +144,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 href="#work"
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-[#14101A] border border-[#714B67]/40 hover:border-[#714B67] text-white text-base font-semibold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white border border-slate-200 hover:border-[#714B67] text-slate-800 hover:text-[#714B67] text-base font-semibold transition-all shadow-sm"
               >
                 <span>Explore Featured Work</span>
               </motion.a>
@@ -152,7 +152,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
               <motion.a
                 whileHover={{ x: 3 }}
                 href="#services"
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-white/70 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-slate-600 hover:text-[#714B67] transition-colors"
               >
                 <span>Our capabilities</span>
                 <span aria-hidden="true">→</span>
@@ -161,7 +161,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
             {/* Trust Highlights Checkmarks */}
             <div
-              className="flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-white/80 pt-2 font-medium"
+              className="flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-slate-700 pt-2 font-medium"
             >
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#017E84]" />
@@ -184,9 +184,9 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
           >
             {/* Floating Top Floating Chip (Pure CSS) */}
             <div
-              className="absolute -top-5 -left-4 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#11141C]/95 backdrop-blur-md border border-[#714B67]/40 shadow-2xl text-xs font-bold text-white animate-chip-float"
+              className="absolute -top-5 -left-4 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl text-xs font-bold text-slate-900 animate-chip-float"
             >
-              <div className="w-6 h-6 rounded-lg bg-[#714B67]/20 text-[#9B6C8F] flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-[#714B67]/10 text-[#714B67] flex items-center justify-center">
                 <Zap className="w-3.5 h-3.5" />
               </div>
               <span>98+ Core Web Vitals Guaranteed</span>
@@ -194,10 +194,10 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
             {/* Floating Bottom Floating Chip (Pure CSS) */}
             <div
-              className="absolute -bottom-5 -right-3 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#11141C]/95 backdrop-blur-md border border-[#017E84]/40 shadow-2xl text-xs font-bold text-white animate-chip-float-rev"
+              className="absolute -bottom-5 -right-3 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl text-xs font-bold text-slate-900 animate-chip-float-rev"
             >
-              <div className="w-6 h-6 rounded-lg bg-[#017E84]/20 text-[#00A09D] flex items-center justify-center">
-                <Star className="w-3.5 h-3.5 fill-[#00A09D]" />
+              <div className="w-6 h-6 rounded-lg bg-[#017E84]/10 text-[#017E84] flex items-center justify-center">
+                <Star className="w-3.5 h-3.5 fill-[#017E84]" />
               </div>
               <span>100% 5-Star Client Rating</span>
             </div>
@@ -315,7 +315,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 pt-10 border-t border-white/10"
+          className="mt-16 pt-10 border-t border-slate-200"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {COMPANY_DETAILS.stats.map((stat, i) => (
@@ -325,13 +325,13 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -4, borderColor: 'rgba(255,255,255,0.2)' }}
-                className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] transition-all"
+                whileHover={{ y: -4, borderColor: '#714B67' }}
+                className="space-y-1.5 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md transition-all"
               >
-                <div className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight bg-gradient-to-r from-white via-white to-white/70 bg-clip-text">
+                <div className="font-display font-black text-3xl sm:text-5xl text-slate-900 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-xs font-bold uppercase tracking-wider text-white/60">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-600">
                   {stat.label}
                 </div>
               </motion.div>

@@ -57,7 +57,7 @@ export default function BackToTop() {
           className="fixed bottom-6 left-6 z-40 select-none"
         >
           {/* Ambient Glow */}
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#714B67]/50 via-[#017E84]/40 to-transparent blur-md pointer-events-none -z-10" />
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#714B67]/20 via-[#017E84]/20 to-transparent blur-md pointer-events-none -z-10" />
 
           {/* Interactive Button Container */}
           <motion.button
@@ -67,7 +67,7 @@ export default function BackToTop() {
             id="back-to-top-button"
             aria-label="Scroll back to top of page"
             title="Scroll to top"
-            className="relative w-12 h-12 rounded-full bg-[#14101A]/95 text-white flex items-center justify-center border border-white/20 shadow-2xl backdrop-blur-md hover:border-[#714B67] group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#714B67]/50"
+            className="relative w-12 h-12 rounded-full bg-white/95 text-slate-800 flex items-center justify-center border border-slate-200 shadow-xl backdrop-blur-md hover:border-[#714B67] group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#714B67]/40"
           >
             {/* Circular SVG Scroll Progress Ring */}
             <svg
@@ -79,7 +79,7 @@ export default function BackToTop() {
                 cx="24"
                 cy="24"
                 r={radius}
-                className="stroke-white/10"
+                className="stroke-slate-200"
                 strokeWidth="2.5"
                 fill="transparent"
               />
@@ -108,7 +108,7 @@ export default function BackToTop() {
 
             {/* Centered Arrow Icon with Hover Float */}
             <motion.div
-              className="relative z-10 flex items-center justify-center text-white/80 group-hover:text-white transition-colors"
+              className="relative z-10 flex items-center justify-center text-slate-700 group-hover:text-[#714B67] transition-colors"
             >
               <ArrowUp className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
             </motion.div>

@@ -124,16 +124,16 @@ export default function Logo({
       <div className="flex flex-col justify-center">
         {/* Main Brand Name */}
         <div className="flex items-center gap-1.5 leading-none">
-          <span className={`font-display font-black tracking-tight text-white ${current.title}`}>
+          <span className={`font-display font-black tracking-tight text-slate-900 ${current.title}`}>
             Apex
           </span>
-          <span className={`font-display font-black tracking-tight bg-gradient-to-r from-[#4FC3F7] via-[#29B6F6] to-[#0288D1] bg-clip-text text-transparent ${current.title}`}>
+          <span className={`font-display font-black tracking-tight bg-gradient-to-r from-[#0288D1] via-[#017E84] to-[#714B67] bg-clip-text text-transparent ${current.title}`}>
             Tech
           </span>
 
           {/* Animated Pulsing Status Beacon (Pure CSS) */}
           <span
-            className={`${current.dot} rounded-full bg-[#00BCD4] shadow-[0_0_8px_#00BCD4] ml-0.5 animate-pulse`}
+            className={`${current.dot} rounded-full bg-[#017E84] shadow-[0_0_8px_rgba(1,126,132,0.4)] ml-0.5 animate-pulse`}
           />
         </div>
 
@@ -141,7 +141,7 @@ export default function Logo({
         {showSubtitle && (
           <div className="flex items-center gap-1.5 mt-1">
             <span
-              className={`uppercase font-bold text-white/50 group-hover:text-white/80 transition-colors ${current.subtitle}`}
+              className={`uppercase font-bold text-slate-500 group-hover:text-slate-800 transition-colors ${current.subtitle}`}
             >
               {subtitleText}
             </span>

@@ -162,7 +162,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             aria-hidden="true"
           />
 
@@ -180,14 +180,14 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
               stiffness: 320,
               mass: 0.8,
             }}
-            className="bg-[#11141C] text-white rounded-3xl max-w-lg w-full max-h-[90vh] sm:max-h-[88vh] flex flex-col shadow-[0_25px_70px_rgba(0,0,0,0.95)] border border-[#714B67]/30 relative z-10 overflow-hidden"
+            className="bg-white text-slate-900 rounded-3xl max-w-lg w-full max-h-[90vh] sm:max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 relative z-10 overflow-hidden"
           >
             {/* 1. FIXED MODAL HEADER (Always Visible at Top) */}
-            <div className="px-5 py-4 sm:px-6 sm:py-4.5 border-b border-white/10 flex items-center justify-between shrink-0 bg-[#11141C] z-20">
+            <div className="px-5 py-4 sm:px-6 sm:py-4.5 border-b border-slate-200 flex items-center justify-between shrink-0 bg-white z-20">
               <Logo size="sm" subtitleText="Project Intake" />
 
               <div className="flex items-center gap-2">
-                <span className="hidden sm:inline-flex text-[10px] font-bold uppercase tracking-widest text-[#00A09D] bg-[#017E84]/15 border border-[#017E84]/30 px-2.5 py-0.5 rounded-full items-center gap-1">
+                <span className="hidden sm:inline-flex text-[10px] font-bold uppercase tracking-widest text-[#017E84] bg-[#017E84]/10 border border-[#017E84]/30 px-2.5 py-0.5 rounded-full items-center gap-1">
                   <Sparkles className="w-3 h-3" />
                   <span>2h Fast Response</span>
                 </span>
@@ -196,7 +196,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={onClose}
-                  className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/40"
+                  className="p-2 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 cursor-pointer"
                   aria-label="Close dialog"
                 >
                   <X className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -216,22 +216,22 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', damping: 14, stiffness: 220 }}
-                  className="w-16 h-16 rounded-full bg-[#017E84]/20 text-[#00A09D] mx-auto flex items-center justify-center border border-[#017E84]/40 shadow-[0_0_20px_rgba(0,160,157,0.3)]"
+                  className="w-16 h-16 rounded-full bg-[#017E84]/10 text-[#017E84] mx-auto flex items-center justify-center border border-[#017E84]/30 shadow-sm"
                 >
                   <CheckCircle2 className="w-9 h-9" />
                 </motion.div>
 
                 <div>
-                  <h3 className="font-display font-black text-2xl sm:text-3xl text-white">
+                  <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900">
                     Project Request Received!
                   </h3>
-                  <p className="text-sm text-white/70 mt-2 leading-relaxed max-w-sm mx-auto">
-                    Thank you, <strong className="text-white">{name || 'Client'}</strong>. Our lead architect will review your <span className="text-[#00A09D] font-semibold">{service}</span> requirements and connect with you within 2 hours.
+                  <p className="text-sm text-slate-600 mt-2 leading-relaxed max-w-sm mx-auto">
+                    Thank you, <strong className="text-slate-900">{name || 'Client'}</strong>. Our lead architect will review your <span className="text-[#017E84] font-semibold">{service}</span> requirements and connect with you within 2 hours.
                   </p>
                 </div>
 
-                <div className="p-3.5 bg-white/5 rounded-2xl border border-white/10 text-xs text-white/80 flex items-center justify-center gap-2">
-                  <Lock className="w-3.5 h-3.5 text-[#00A09D]" />
+                <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-700 flex items-center justify-center gap-2">
+                  <Lock className="w-3.5 h-3.5 text-[#017E84]" />
                   <span>Your submission is encrypted and confidential</span>
                 </div>
 
@@ -242,7 +242,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                     href={getWhatsAppQuickUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-5 rounded-full bg-[#25D366] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg hover:bg-[#1EBE5D] transition-colors"
+                    className="w-full py-3.5 px-5 rounded-full bg-[#25D366] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:bg-[#1EBE5D] transition-colors"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Open Instant WhatsApp Chat ({COMPANY_DETAILS.phoneRaw})</span>
@@ -252,7 +252,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       setSubmitted(false);
                       onClose();
                     }}
-                    className="w-full py-2.5 px-4 rounded-full bg-white/10 text-white font-bold text-xs hover:bg-white/20 transition-colors"
+                    className="w-full py-2.5 px-4 rounded-full bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors cursor-pointer"
                   >
                     Done & Close Window
                   </button>
@@ -264,17 +264,17 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                 {/* Scrollable Form Body with Smooth Touch Drag */}
                 <div
                   ref={scrollContainerRef}
-                  className="flex-1 overflow-y-auto px-5 sm:px-7 py-5 space-y-4 sm:space-y-4.5 overscroll-contain scroll-smooth [scrollbar-width:thin] [scrollbar-color:#333_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-thumb]:rounded-full"
+                  className="flex-1 overflow-y-auto px-5 sm:px-7 py-5 space-y-4 sm:space-y-4.5 overscroll-contain scroll-smooth"
                 >
                   <div className="mb-2">
-                    <h3 id="modal-project-title" className="font-display font-extrabold text-xl sm:text-2xl text-white tracking-tight">
+                    <h3 id="modal-project-title" className="font-display font-extrabold text-xl sm:text-2xl text-slate-900 tracking-tight">
                       Start Your Project
                     </h3>
-                    <p className="text-xs text-white/65 mt-0.5 leading-relaxed">
+                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
                       Tell us about your project or call direct at{' '}
                       <a
                         href={`tel:${COMPANY_DETAILS.phoneTel}`}
-                        className="font-bold text-white font-mono underline hover:text-[#00A09D] transition-colors"
+                        className="font-bold text-slate-900 font-mono underline hover:text-[#714B67] transition-colors"
                       >
                         {COMPANY_DETAILS.phone}
                       </a>
@@ -287,7 +287,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                     animate={shakeKeys.name > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                     transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                   >
-                    <label htmlFor="modal-name" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
+                    <label htmlFor="modal-name" className="text-[11px] font-bold uppercase tracking-wider text-slate-800 block mb-1">
                       Your Name *
                     </label>
                     <input
@@ -298,10 +298,10 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       placeholder="e.g. Johnathan Smith"
                       value={name}
                       onChange={(e) => handleNameChange(e.target.value)}
-                      className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/60 focus:outline-none transition-all duration-200 ${
+                      className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all duration-200 ${
                         errors.name
-                          ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
-                          : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
+                          ? 'bg-rose-50 border-2 border-rose-500 focus:border-rose-600 focus:ring-2 focus:ring-rose-500/20'
+                          : 'bg-slate-50 border border-slate-300 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
                       }`}
                     />
                     <AnimatePresence>
@@ -311,7 +311,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                           animate={{ opacity: 1, y: 0, height: 'auto' }}
                           exit={{ opacity: 0, y: -4, height: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="flex items-center gap-1.5 text-xs text-rose-400 font-medium mt-1.5"
+                          className="flex items-center gap-1.5 text-xs text-rose-600 font-medium mt-1.5"
                         >
                           <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                           <span>{errors.name}</span>
@@ -328,7 +328,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       animate={shakeKeys.email > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label htmlFor="modal-email" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
+                      <label htmlFor="modal-email" className="text-[11px] font-bold uppercase tracking-wider text-slate-800 block mb-1">
                         Email Address *
                       </label>
                       <input
@@ -339,10 +339,10 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                         placeholder="john@company.com"
                         value={email}
                         onChange={(e) => handleEmailChange(e.target.value)}
-                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/60 focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all duration-200 ${
                           errors.email
-                            ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
-                            : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
+                            ? 'bg-rose-50 border-2 border-rose-500 focus:border-rose-600 focus:ring-2 focus:ring-rose-500/20'
+                            : 'bg-slate-50 border border-slate-300 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
                         }`}
                       />
                       <AnimatePresence>
@@ -352,7 +352,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                             animate={{ opacity: 1, y: 0, height: 'auto' }}
                             exit={{ opacity: 0, y: -4, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="flex items-center gap-1.5 text-xs text-rose-400 font-medium mt-1.5"
+                            className="flex items-center gap-1.5 text-xs text-rose-600 font-medium mt-1.5"
                           >
                             <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                             <span>{errors.email}</span>
@@ -367,7 +367,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       animate={shakeKeys.phone > 0 ? { x: [0, -10, 10, -8, 8, -4, 4, 0] } : { x: 0 }}
                       transition={{ duration: 0.42, ease: [0.36, 0.07, 0.19, 0.97] }}
                     >
-                      <label htmlFor="modal-phone" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
+                      <label htmlFor="modal-phone" className="text-[11px] font-bold uppercase tracking-wider text-slate-800 block mb-1">
                         Phone / WhatsApp
                       </label>
                       <input
@@ -378,10 +378,10 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                         placeholder="+91 7979968347"
                         value={phone}
                         onChange={(e) => handlePhoneChange(e.target.value)}
-                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-white placeholder-white/60 focus:outline-none transition-all duration-200 ${
+                        className={`w-full px-3.5 py-2.5 sm:py-3 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all duration-200 ${
                           errors.phone
-                            ? 'bg-rose-500/10 border-2 border-rose-500/80 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.2)]'
-                            : 'bg-white/5 border border-white/15 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
+                            ? 'bg-rose-50 border-2 border-rose-500 focus:border-rose-600 focus:ring-2 focus:ring-rose-500/20'
+                            : 'bg-slate-50 border border-slate-300 focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67]'
                         }`}
                       />
                       <AnimatePresence>
@@ -391,7 +391,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                             animate={{ opacity: 1, y: 0, height: 'auto' }}
                             exit={{ opacity: 0, y: -4, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="flex items-center gap-1.5 text-xs text-rose-400 font-medium mt-1.5"
+                            className="flex items-center gap-1.5 text-xs text-rose-600 font-medium mt-1.5"
                           >
                             <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                             <span>{errors.phone}</span>
@@ -403,7 +403,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
 
                   {/* 3. Service Discipline Selection */}
                   <div>
-                    <label htmlFor="modal-service" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
+                    <label htmlFor="modal-service" className="text-[11px] font-bold uppercase tracking-wider text-slate-800 block mb-1">
                       Project Service Required
                     </label>
                     <select
@@ -411,14 +411,14 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       name="service"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-[#161616] border border-white/15 text-sm text-white focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all cursor-pointer"
+                      className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all cursor-pointer"
                     >
                       {SERVICES.map((s) => (
-                        <option key={s.id} value={s.title} className="bg-[#141414] text-white">
+                        <option key={s.id} value={s.title} className="bg-white text-slate-900">
                           {s.title}
                         </option>
                       ))}
-                      <option value="Complete Digital Studio Overhaul" className="bg-[#141414] text-white">
+                      <option value="Complete Digital Studio Overhaul" className="bg-white text-slate-900">
                         Complete Digital Studio Overhaul
                       </option>
                     </select>
@@ -426,7 +426,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
 
                   {/* 4. Notes / Goals */}
                   <div>
-                    <label htmlFor="modal-notes" className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-1">
+                    <label htmlFor="modal-notes" className="text-[11px] font-bold uppercase tracking-wider text-slate-800 block mb-1">
                       Project Scope &amp; Goals
                     </label>
                     <textarea
@@ -436,29 +436,29 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                       placeholder="Brief details regarding timeline, budget, references, or key deliverables..."
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder-white/60 focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-all resize-none"
                     />
                   </div>
 
                   {/* Trust Micro-Badges */}
-                  <div className="flex items-center justify-between text-[11px] text-white/60 pt-1 pb-1">
+                  <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1 pb-1">
                     <div className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#00A09D]" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#017E84]" />
                       <span>Confidential NDA Guaranteed</span>
                     </div>
-                    <span className="text-[#00A09D] font-semibold">100% IP Ownership</span>
+                    <span className="text-[#017E84] font-semibold">100% IP Ownership</span>
                   </div>
                 </div>
 
                 {/* 3. PINNED BOTTOM ACTION FOOTER (ALWAYS VISIBLE & INSTANTLY CLICKABLE) */}
-                <div className="px-5 py-4 sm:px-7 sm:py-4.5 border-t border-white/15 bg-[#0A0A0A]/95 backdrop-blur-md shrink-0 flex flex-col gap-2 z-20">
+                <div className="px-5 py-4 sm:px-7 sm:py-4.5 border-t border-slate-200 bg-white/95 backdrop-blur-md shrink-0 flex flex-col gap-2 z-20">
                   <motion.button
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
                     id="modal-submit-project-btn"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white font-bold text-xs sm:text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(113,75,103,0.4)] cursor-pointer disabled:opacity-50"
+                    className="w-full py-3.5 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white font-bold text-xs sm:text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-sm cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
@@ -477,7 +477,7 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                     href={getWhatsAppQuickUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-white font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-[#25D366]/30 cursor-pointer text-center"
+                    className="w-full py-2.5 rounded-full bg-emerald-50 hover:bg-[#25D366] text-emerald-700 hover:text-white font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-emerald-200 cursor-pointer text-center"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>Direct Chat on WhatsApp ({COMPANY_DETAILS.phoneRaw})</span>

@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -14,40 +14,10 @@ const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const ContactSection = lazy(() => import('./components/ContactSection'));
 const ConsultationModal = lazy(() => import('./components/ConsultationModal'));
-const AdminModal = lazy(() => import('./components/AdminModal'));
 
 export default function App() {
   const [consultationOpen, setConsultationOpen] = useState(false);
-  const [adminOpen, setAdminOpen] = useState(false);
   const [selectedServiceForModal, setSelectedServiceForModal] = useState<string>('Web Development');
-
-  useEffect(() => {
-    const checkAdminTrigger = () => {
-      const hash = window.location.hash.toLowerCase();
-      const search = window.location.search.toLowerCase();
-      if (hash.includes('admin') || search.includes('admin')) {
-        setAdminOpen(true);
-      }
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
-        e.preventDefault();
-        setAdminOpen((prev) => !prev);
-      }
-    };
-
-    checkAdminTrigger();
-
-    window.addEventListener('hashchange', checkAdminTrigger);
-    window.addEventListener('popstate', checkAdminTrigger);
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('hashchange', checkAdminTrigger);
-      window.removeEventListener('popstate', checkAdminTrigger);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
 
   const handleOpenConsultation = (serviceName?: string) => {
     if (serviceName) {
@@ -61,9 +31,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0c10] text-[#F5F5F5] flex flex-col selection:bg-[#714B67] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-[#714B67] selection:text-white">
       {/* Primary Navigation Header */}
-      <Header onOpenConsultation={handleOpenConsultation} onOpenAdmin={() => setAdminOpen(true)} />
+      <Header onOpenConsultation={handleOpenConsultation} />
 
       {/* Main Content Sections with Glowing Animated Dividers */}
       <main className="flex-1">
@@ -105,7 +75,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onOpenAdmin={() => setAdminOpen(true)} />
+      <Footer />
 
       {/* Floating Interactive Quick Bar */}
       <FloatingContactBar onOpenConsultation={handleOpenConsultation} />
@@ -120,21 +90,6 @@ export default function App() {
             isOpen={consultationOpen}
             onClose={handleCloseConsultation}
             defaultService={selectedServiceForModal}
-          />
-        </Suspense>
-      )}
-
-      {/* Admin Panel Modal (Code-split) */}
-      {adminOpen && (
-        <Suspense fallback={null}>
-          <AdminModal
-            isOpen={adminOpen}
-            onClose={() => {
-              setAdminOpen(false);
-              if (window.location.hash === '#admin') {
-                history.replaceState(null, '', window.location.pathname + window.location.search);
-              }
-            }}
           />
         </Suspense>
       )}
