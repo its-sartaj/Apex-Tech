@@ -131,7 +131,7 @@ export default function ConsultationModal({ isOpen, onClose, defaultService }: C
       email,
       phone,
       service,
-      scope: projectTimeline,
+      scope: 'Direct Discovery',
       message: notes,
     });
     // Smooth micro-delay for realistic feedback

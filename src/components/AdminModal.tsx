@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   X, Lock, ShieldCheck, Download, Trash2, Phone, Mail, 
-  MessageSquare, Search, Filter, RefreshCw, CheckCircle2, Clock, AlertCircle, Eye
+  MessageSquare, Search, Filter, CheckCircle2, Clock, AlertCircle, Eye
 } from 'lucide-react';
 import { Inquiry } from '../types';
 import { 
@@ -237,7 +237,7 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
                 {/* Clear & Export Tools */}
                 <div className="flex items-center gap-2">
                   <button
-                    onClick={exportToCSV}
+                    onClick={exportInquiriesCSV}
                     disabled={inquiries.length === 0}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white/90 hover:text-white transition-colors disabled:opacity-40"
                     title="Export to CSV"
@@ -255,17 +255,6 @@ export default function AdminModal({ isOpen, onClose }: AdminModalProps) {
                     <Trash2 className="w-3.5 h-3.5" />
                     <span className="hidden sm:inline">Clear All</span>
                   </button>
-
-                  {inquiries.length === 0 && (
-                    <button
-                      onClick={handleLoadDemoData}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#714B67]/20 hover:bg-[#714B67]/40 border border-[#714B67]/40 text-xs font-semibold text-white transition-colors"
-                      title="Load Sample Leads"
-                    >
-                      <Plus className="w-3.5 h-3.5 text-[#9B6C8F]" />
-                      <span className="hidden sm:inline">Load Demo Data</span>
-                    </button>
-                  )}
                 </div>
               </div>
 

@@ -56,15 +56,6 @@ export interface FAQItem {
   category: string;
 }
 
-export interface ProposalFormState {
-  service: string;
-  scope: string;
-  timeline: string;
-  name: string;
-  email: string;
-  phone?: string;
-  notes?: string;
-}
 
 export interface Inquiry {
   id: string;

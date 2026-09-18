@@ -10,7 +10,6 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
   return (
     <footer className="bg-[#080a0e] text-white pt-16 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
