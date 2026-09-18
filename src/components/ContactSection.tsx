@@ -271,18 +271,15 @@ Message: ${message || 'I would like to discuss a new digital project with your t
 
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Official Email Desks
+                  Official Email
                 </span>
-                <div className="font-display font-bold text-xl text-slate-900 mt-0.5 font-mono">
+                <div className="font-display font-bold text-lg sm:text-xl text-slate-900 mt-0.5 font-mono break-all">
                   <a
                     href={`mailto:${COMPANY_DETAILS.email}`}
                     className="hover:text-[#714B67] transition-colors"
                   >
                     {COMPANY_DETAILS.email}
                   </a>
-                </div>
-                <div className="text-xs text-slate-600 mt-1 font-mono">
-                  Secondary: <a href={`mailto:${COMPANY_DETAILS.secondaryEmail}`} className="underline hover:text-[#714B67]">{COMPANY_DETAILS.secondaryEmail}</a>
                 </div>
               </div>
 

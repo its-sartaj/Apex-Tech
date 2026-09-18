@@ -1,4 +1,4 @@
-﻿# Apex Tech
+# Apex Tech
 
 > Apex Tech is a premier digital engineering and design studio specializing in modern React & Next.js web development, bespoke UI/UX design systems, technical SEO, Core Web Vitals 95+ speed optimization, and high-conversion landing pages.
 
@@ -31,7 +31,7 @@ Apex Tech operates with direct engineer communication, clean client-owned code r
 ## Direct Contact & Consultation
 - [Direct Phone](tel:+917979968347): +91 7979968347 (Mon–Sat 9:00 AM – 8:00 PM IST)
 - [Instant WhatsApp](https://wa.me/917979968347): Direct chat with engineering team
-- [Official Email](mailto:mrbeast797996@gmail.com): mrbeast797996@gmail.com
+- [Official Email](mailto:apextech.servicess@gmail.com): apextech.servicess@gmail.com
 - [Interactive Consultation Form](https://its-sartaj.github.io/Apex-Tech/#contact): 20-minute discovery request
 
 ## Optional

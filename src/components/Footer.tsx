@@ -122,14 +122,6 @@ export default function Footer() {
               </a>
 
               <a
-                href={`mailto:${COMPANY_DETAILS.secondaryEmail}`}
-                className="flex items-center gap-2 text-slate-700 hover:text-[#017E84] transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-[#017E84]" />
-                <span className="font-mono">{COMPANY_DETAILS.secondaryEmail}</span>
-              </a>
-
-              <a
                 href={COMPANY_DETAILS.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"

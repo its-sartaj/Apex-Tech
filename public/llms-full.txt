@@ -1,4 +1,4 @@
-﻿# Apex Tech — Comprehensive LLM Context & Agent Manual
+# Apex Tech — Comprehensive LLM Context & Agent Manual
 
 > Comprehensive system documentation and service manual for LLM agents, web crawlers, and AI search engines interacting with Apex Tech (https://its-sartaj.github.io/Apex-Tech/).
 
@@ -7,7 +7,7 @@
 - Tagline: We build the climb to your apex.
 - Mission: Designing and engineering high-performing websites, modern UI/UX design systems, and organic search visibility for ambitious brands.
 - Telephone: +91 7979968347
-- Email: mrbeast797996@gmail.com
+- Email: apextech.servicess@gmail.com
 - Hours: Monday – Saturday: 9:00 AM – 8:00 PM IST
 - Response Time: Under 2 hours guaranteed
 
