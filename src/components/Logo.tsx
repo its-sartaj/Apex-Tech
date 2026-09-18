@@ -25,18 +25,9 @@ export function ApexAnimatedMark({
       style={{ width: size, height: size }}
       className={`relative inline-flex items-center justify-center select-none group/mark ${className}`}
     >
-      {/* Ambient Breathing Aura */}
-      <motion.div
-        animate={{
-          opacity: [0.3, 0.6, 0.3],
-          scale: [0.95, 1.15, 0.95],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 3.5,
-          ease: 'easeInOut',
-        }}
-        className="absolute -inset-1 bg-gradient-to-tr from-[#2196F3]/40 via-[#00BCD4]/30 to-[#4FC3F7]/20 rounded-full blur-md pointer-events-none -z-10 group-hover/mark:scale-125 group-hover/mark:opacity-80 transition-all duration-300"
+      {/* Ambient Breathing Aura (Pure CSS) */}
+      <div
+        className="absolute -inset-1 bg-gradient-to-tr from-[#2196F3]/40 via-[#00BCD4]/30 to-[#4FC3F7]/20 rounded-full blur-md pointer-events-none -z-10 group-hover/mark:scale-125 group-hover/mark:opacity-80 transition-all duration-300 animate-pulse"
       />
 
       {/* Logo Image — scaled up to crop out light background edges */}
@@ -140,18 +131,9 @@ export default function Logo({
             Tech
           </span>
 
-          {/* Animated Pulsing Status Beacon */}
-          <motion.span
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 2.2,
-              ease: 'easeInOut',
-            }}
-            className={`${current.dot} rounded-full bg-[#00BCD4] shadow-[0_0_8px_#00BCD4] ml-0.5`}
+          {/* Animated Pulsing Status Beacon (Pure CSS) */}
+          <span
+            className={`${current.dot} rounded-full bg-[#00BCD4] shadow-[0_0_8px_#00BCD4] ml-0.5 animate-pulse`}
           />
         </div>
 

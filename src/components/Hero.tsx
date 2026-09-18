@@ -30,56 +30,24 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
   return (
     <section id="hero-section" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#0b0c10] overflow-hidden">
-      {/* Animated Subtle Ambient Light Canvas */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          x: [0, 40, 0],
-          y: [0, -30, 0],
-          opacity: [0.35, 0.6, 0.35],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 12,
-          ease: 'easeInOut',
-        }}
-        className="absolute -top-24 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#714B67]/25 via-[#017E84]/15 to-transparent rounded-full blur-[120px] pointer-events-none -z-10"
+      {/* Animated Subtle Ambient Light Canvas (Pure GPU CSS - Zero TBT) */}
+      <div
+        className="absolute -top-24 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#714B67]/25 via-[#017E84]/15 to-transparent rounded-full blur-[120px] pointer-events-none -z-10 animate-ambient-1"
       />
-      <motion.div
-        animate={{
-          scale: [1, 1.25, 1],
-          x: [0, -30, 0],
-          y: [0, 40, 0],
-          opacity: [0.25, 0.5, 0.25],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 14,
-          ease: 'easeInOut',
-          delay: 1.5,
-        }}
-        className="absolute top-48 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-[#714B67]/20 via-[#017E84]/10 to-transparent rounded-full blur-[100px] pointer-events-none -z-10"
+      <div
+        className="absolute top-48 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-[#714B67]/20 via-[#017E84]/10 to-transparent rounded-full blur-[100px] pointer-events-none -z-10 animate-ambient-2"
       />
 
-      {/* Decorative Floating Background Particles */}
+      {/* Decorative Floating Background Particles (Pure CSS) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         {[...Array(6)].map((_, i) => (
-          <motion.div
+          <div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-white/30"
+            className="absolute w-1 h-1 rounded-full bg-white/30 animate-pulse"
             style={{
               top: `${15 + i * 14}%`,
               left: `${10 + (i * 17) % 80}%`,
-            }}
-            animate={{
-              y: [0, -25, 0],
-              opacity: [0.2, 0.7, 0.2],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 4 + i * 1.2,
-              ease: 'easeInOut',
-              delay: i * 0.4,
+              animationDelay: `${i * 0.4}s`,
             }}
           />
         ))}
@@ -252,35 +220,29 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
             transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative"
           >
-            {/* Floating Top Floating Chip */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="absolute -top-5 -left-4 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#11141C]/95 backdrop-blur-md border border-[#714B67]/40 shadow-2xl text-xs font-bold text-white"
+            {/* Floating Top Floating Chip (Pure CSS) */}
+            <div
+              className="absolute -top-5 -left-4 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#11141C]/95 backdrop-blur-md border border-[#714B67]/40 shadow-2xl text-xs font-bold text-white animate-chip-float"
             >
               <div className="w-6 h-6 rounded-lg bg-[#714B67]/20 text-[#9B6C8F] flex items-center justify-center">
                 <Zap className="w-3.5 h-3.5" />
               </div>
               <span>98+ Core Web Vitals Guaranteed</span>
-            </motion.div>
+            </div>
 
-            {/* Floating Bottom Floating Chip */}
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 0.8 }}
-              className="absolute -bottom-5 -right-3 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#11141C]/95 backdrop-blur-md border border-[#017E84]/40 shadow-2xl text-xs font-bold text-white"
+            {/* Floating Bottom Floating Chip (Pure CSS) */}
+            <div
+              className="absolute -bottom-5 -right-3 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#11141C]/95 backdrop-blur-md border border-[#017E84]/40 shadow-2xl text-xs font-bold text-white animate-chip-float-rev"
             >
               <div className="w-6 h-6 rounded-lg bg-[#017E84]/20 text-[#00A09D] flex items-center justify-center">
                 <Star className="w-3.5 h-3.5 fill-[#00A09D]" />
               </div>
               <span>100% 5-Star Client Rating</span>
-            </motion.div>
+            </div>
 
             {/* Main Interactive Stage Container */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
-              className="relative bg-gradient-to-b from-[#11141C] to-[#0d0f16] rounded-3xl p-7 text-white shadow-2xl overflow-hidden border border-white/15 group"
+            <div
+              className="relative bg-gradient-to-b from-[#11141C] to-[#0d0f16] rounded-3xl p-7 text-white shadow-2xl overflow-hidden border border-white/15 group animate-chip-float"
             >
               {/* Header inside stage */}
               <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-2">
@@ -381,7 +343,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   {COMPANY_DETAILS.phone}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
