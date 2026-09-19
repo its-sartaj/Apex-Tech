@@ -1,10 +1,8 @@
 import { useState, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Footer from './components/Footer';
-import FloatingContactBar from './components/FloatingContactBar';
 import SectionDivider from './components/SectionDivider';
-import BackToTop from './components/BackToTop';
+import LazySection from './components/LazySection';
 
 // Lazy-load below-the-fold components to drastically minimize initial JS payload and TBT
 const Services = lazy(() => import('./components/Services'));
@@ -14,6 +12,9 @@ const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const ContactSection = lazy(() => import('./components/ContactSection'));
 const ConsultationModal = lazy(() => import('./components/ConsultationModal'));
+const Footer = lazy(() => import('./components/Footer'));
+const FloatingContactBar = lazy(() => import('./components/FloatingContactBar'));
+const BackToTop = lazy(() => import('./components/BackToTop'));
 
 export default function App() {
   const [consultationOpen, setConsultationOpen] = useState(false);
@@ -35,53 +36,55 @@ export default function App() {
       {/* Primary Navigation Header */}
       <Header onOpenConsultation={handleOpenConsultation} />
 
-      {/* Main Content Sections with Glowing Animated Dividers */}
+      {/* Main Content Sections */}
       <main className="flex-1">
         {/* Instant Above-The-Fold Hero Section */}
         <Hero onOpenConsultation={handleOpenConsultation} />
         
-        {/* Asynchronously hydrated below-the-fold content */}
-        <Suspense fallback={<div className="min-h-[400px] w-full" />}>
-          <div className="content-auto">
-            <SectionDivider showBadge badgeLabel="Core Disciplines" />
-            <Services onSelectService={handleOpenConsultation} />
-          </div>
-          
-          <div className="content-auto">
-            <SectionDivider showBadge badgeLabel="Execution Framework" />
-            <Process onOpenConsultation={handleOpenConsultation} />
-          </div>
-          
-          <div className="content-auto">
-            <SectionDivider showBadge badgeLabel="Selected Works" />
-            <WorkPortfolio onOpenConsultation={handleOpenConsultation} />
-          </div>
-          
-          <div className="content-auto">
-            <SectionDivider showBadge badgeLabel="Verified Results" />
-            <Testimonials />
-          </div>
-          
-          <div className="content-auto">
-            <SectionDivider showBadge badgeLabel="Clarity & FAQ" />
-            <FAQ onOpenConsultation={handleOpenConsultation} />
-          </div>
-          
-          <div className="content-auto">
-            <SectionDivider showBadge badgeLabel="Direct Engagement" />
-            <ContactSection preselectedService={selectedServiceForModal} />
-          </div>
-        </Suspense>
+        {/* Viewport-triggered below-the-fold content */}
+        <LazySection rootMargin="400px" minHeight="800px">
+          <Suspense fallback={<div className="min-h-[400px] w-full" />}>
+            <div className="content-auto">
+              <SectionDivider showBadge badgeLabel="Core Disciplines" />
+              <Services onSelectService={handleOpenConsultation} />
+            </div>
+            
+            <div className="content-auto">
+              <SectionDivider showBadge badgeLabel="Execution Framework" />
+              <Process onOpenConsultation={handleOpenConsultation} />
+            </div>
+            
+            <div className="content-auto">
+              <SectionDivider showBadge badgeLabel="Selected Works" />
+              <WorkPortfolio onOpenConsultation={handleOpenConsultation} />
+            </div>
+            
+            <div className="content-auto">
+              <SectionDivider showBadge badgeLabel="Verified Results" />
+              <Testimonials />
+            </div>
+            
+            <div className="content-auto">
+              <SectionDivider showBadge badgeLabel="Clarity & FAQ" />
+              <FAQ onOpenConsultation={handleOpenConsultation} />
+            </div>
+            
+            <div className="content-auto">
+              <SectionDivider showBadge badgeLabel="Direct Engagement" />
+              <ContactSection preselectedService={selectedServiceForModal} />
+            </div>
+          </Suspense>
+        </LazySection>
       </main>
 
-      {/* Footer */}
-      <Footer />
-
-      {/* Floating Interactive Quick Bar */}
-      <FloatingContactBar onOpenConsultation={handleOpenConsultation} />
-
-      {/* Floating Circular Back-to-Top Action */}
-      <BackToTop />
+      {/* Below-the-fold non-critical shell elements */}
+      <LazySection rootMargin="400px" minHeight="300px">
+        <Suspense fallback={null}>
+          <Footer />
+          <FloatingContactBar onOpenConsultation={handleOpenConsultation} />
+          <BackToTop />
+        </Suspense>
+      </LazySection>
 
       {/* Consultation Discovery Modal (Code-split) */}
       {consultationOpen && (
@@ -96,4 +99,3 @@ export default function App() {
     </div>
   );
 }
-

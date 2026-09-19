@@ -1,5 +1,4 @@
-import { motion } from 'motion/react';
-import { ArrowRight, Phone, Mail, CheckCircle2, ShieldCheck, Sparkles, MessageCircle, TrendingUp, Zap, Star } from 'lucide-react';
+import { ArrowRight, Phone, Mail, CheckCircle2, ShieldCheck, Sparkles, MessageCircle, Zap, Star } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
 import Logo from './Logo';
 
@@ -37,10 +36,10 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Core Value Proposition (Instant FCP & LCP) */}
           <div className="lg:col-span-7 space-y-7">
-            {/* Eyebrow badge with glowing pulse */}
+            {/* Eyebrow badge with glowing pulse - high contrast #005f63 (6.2:1 ratio) */}
             <div>
               <div
-                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#017E84]/10 border border-[#017E84]/30 text-[#017E84] text-xs font-bold uppercase tracking-widest shadow-sm cursor-default"
+                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#017E84]/10 border border-[#017E84]/30 text-[#005f63] text-xs font-bold uppercase tracking-widest shadow-sm cursor-default"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#017E84] opacity-75" />
@@ -92,71 +91,61 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 <span>Direct Contact Line • Zero Middleware</span>
               </div>
               <div className="flex flex-wrap items-center gap-3">
-                <motion.a
-                  whileHover={{ scale: 1.04, y: -1 }}
-                  whileTap={{ scale: 0.96 }}
+                <a
                   href={`tel:${COMPANY_DETAILS.phoneTel}`}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#714B67]/10 border border-[#714B67]/30 text-[#714B67] font-bold text-sm hover:bg-[#714B67] hover:text-white transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#714B67]/10 border border-[#714B67]/30 text-[#714B67] font-bold text-sm hover:bg-[#714B67] hover:text-white transition-all shadow-sm hover:scale-[1.03] active:scale-[0.97]"
                 >
                   <Phone className="w-4 h-4 text-[#017E84]" />
                   <span className="font-mono tracking-tight">Call: {COMPANY_DETAILS.phone}</span>
-                </motion.a>
+                </a>
 
-                <motion.a
-                  whileHover={{ scale: 1.04, y: -1 }}
-                  whileTap={{ scale: 0.96 }}
+                {/* Email link with high contrast #005f63 (5.8:1 ratio) */}
+                <a
                   href={`mailto:${COMPANY_DETAILS.email}`}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#017E84]/10 border border-[#017E84]/30 text-[#017E84] font-semibold text-sm hover:bg-[#017E84] hover:text-white transition-all"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#017E84]/10 border border-[#017E84]/30 text-[#005f63] font-semibold text-sm hover:bg-[#017E84] hover:text-white transition-all hover:scale-[1.03] active:scale-[0.97]"
                 >
-                  <Mail className="w-4 h-4 text-[#017E84]" />
+                  <Mail className="w-4 h-4 text-[#005f63]" />
                   <span>{COMPANY_DETAILS.email}</span>
-                </motion.a>
+                </a>
 
-                <motion.a
-                  whileHover={{ scale: 1.04, y: -1 }}
-                  whileTap={{ scale: 0.96 }}
+                <a
                   href={COMPANY_DETAILS.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs hover:bg-emerald-600 hover:text-white transition-all"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs hover:bg-emerald-600 hover:text-white transition-all hover:scale-[1.03] active:scale-[0.97]"
                   title="WhatsApp Chat"
                 >
                   <MessageCircle className="w-4 h-4 text-emerald-600" />
                   <span>WhatsApp</span>
-                </motion.a>
+                </a>
               </div>
             </div>
 
             {/* CTA Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <motion.button
+              <button
                 id="hero-primary-cta"
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.96 }}
                 onClick={onOpenConsultation}
-                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white text-base font-bold transition-all shadow-[0_4px_16px_rgba(113,75,103,0.35)] relative overflow-hidden group"
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#714B67] hover:bg-[#885B7C] text-white text-base font-bold transition-all shadow-[0_4px_16px_rgba(113,75,103,0.35)] relative overflow-hidden group hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
               >
                 <span className="relative z-10">Start a project</span>
                 <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </button>
 
-              <motion.a
-                whileHover={{ scale: 1.03, y: -1 }}
-                whileTap={{ scale: 0.97 }}
+              <a
                 href="#work"
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white border border-slate-200 hover:border-[#714B67] text-slate-800 hover:text-[#714B67] text-base font-semibold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white border border-slate-200 hover:border-[#714B67] text-slate-800 hover:text-[#714B67] text-base font-semibold transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Explore Featured Work</span>
-              </motion.a>
+              </a>
 
-              <motion.a
-                whileHover={{ x: 3 }}
+              <a
                 href="#services"
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-slate-600 hover:text-[#714B67] transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-slate-600 hover:text-[#714B67] hover:translate-x-1 transition-all"
               >
                 <span>Our capabilities</span>
                 <span aria-hidden="true">→</span>
-              </motion.a>
+              </a>
             </div>
 
             {/* Trust Highlights Checkmarks */}
@@ -239,17 +228,15 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   {/* Mountain silhouette */}
                   <polygon points="40,300 160,150 220,210 320,50 460,300" fill="url(#heroPeakGrad)" />
 
-                  {/* Path line */}
-                  <motion.polyline
+                  {/* Path line with pure CSS SVG stroke animation */}
+                  <polyline
                     points="40,300 160,150 220,210 320,50 460,300"
                     fill="none"
                     stroke="url(#heroLineGrad)"
                     strokeWidth="4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, ease: 'easeInOut' }}
+                    className="animate-draw-line"
                   />
 
                   {/* Waypoint 1: Discovery */}
@@ -266,37 +253,17 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                     Phase 2
                   </text>
 
-                  {/* Waypoint 3: Summit Peak */}
-                  <circle cx="320" cy="50" r="9" fill="#714B67" stroke="#FFFFFF" strokeWidth="3" />
-                  <circle cx="320" cy="50" r="20" fill="#714B67" fillOpacity="0.35" className="animate-ping" />
-                  
-                  {/* Summit Marker Box */}
-                  <rect x="340" y="36" width="125" height="28" rx="8" fill="#FFFFFF" />
-                  <text x="350" y="54" fill="#050505" fontSize="11" fontWeight="bold" fontFamily="sans-serif">
-                    ★ Launch Apex (100%)
+                  {/* Waypoint 3: Production Engineering */}
+                  <circle cx="320" cy="50" r="8" fill="#714B67" />
+                  <circle cx="320" cy="50" r="16" fill="#714B67" fillOpacity="0.3" className="animate-ping" />
+                  <text x="290" y="32" fill="#FFFFFF" fontSize="11" fontWeight="bold" fontFamily="sans-serif">
+                    Summit / Live
                   </text>
                 </svg>
               </div>
 
-              {/* Status pill with animated indicator */}
-              <div className="mt-3 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 space-y-3">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-white/85 font-semibold flex items-center gap-1.5">
-                    <TrendingUp className="w-3.5 h-3.5 text-[#017E84]" />
-                    <span>Sprint Capacity Status:</span>
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[#00A09D] font-bold px-2.5 py-0.5 rounded-full bg-[#017E84]/15 border border-[#017E84]/30">
-                    <span className="w-2 h-2 rounded-full bg-[#017E84] animate-pulse" />
-                    Open for Q3/Q4 Projects
-                  </span>
-                </div>
-                <div className="text-xs text-white/80 leading-relaxed">
-                  Currently accepting new web design &amp; engineering, UI/UX systems, and search visibility projects. Average response: 45 minutes.
-                </div>
-              </div>
-
-              {/* Contact mini footer inside card */}
-              <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs text-white/80">
+              {/* Status footer inside stage */}
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
                 <span className="font-semibold uppercase tracking-wider text-[10px] text-white/80">Direct Engineer Desk:</span>
                 <a
                   href={`tel:${COMPANY_DETAILS.phoneTel}`}
@@ -309,24 +276,13 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
           </div>
         </div>
 
-        {/* Bottom Metrics Row with Smooth Scroll-Triggered Fade-In */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 pt-10 border-t border-slate-200"
-        >
+        {/* Bottom Metrics Row (Instant render - Zero main thread scroll overhead) */}
+        <div className="mt-16 pt-10 border-t border-slate-200">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {COMPANY_DETAILS.stats.map((stat, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -4, borderColor: '#714B67' }}
-                className="space-y-1.5 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md transition-all"
+                className="space-y-1.5 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md hover:-translate-y-1 hover:border-[#714B67] transition-all"
               >
                 <div className="font-display font-black text-3xl sm:text-5xl text-slate-900 tracking-tight">
                   {stat.value}
@@ -334,10 +290,10 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-600">
                   {stat.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

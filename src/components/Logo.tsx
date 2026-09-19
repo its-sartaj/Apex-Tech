@@ -1,5 +1,3 @@
-import { motion } from 'motion/react';
-
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   showSubtitle?: boolean;
@@ -19,11 +17,9 @@ export function ApexAnimatedMark({
   className?: string;
 }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.94 }}
+    <div
       style={{ width: size, height: size }}
-      className={`relative inline-flex items-center justify-center select-none group/mark ${className}`}
+      className={`relative inline-flex items-center justify-center select-none group/mark hover:scale-105 active:scale-95 transition-transform duration-200 ${className}`}
     >
       {/* Ambient Breathing Aura (Pure CSS) */}
       <div
@@ -38,10 +34,14 @@ export function ApexAnimatedMark({
         <img
           src="./logo.jpg"
           alt="Apex Tech"
+          width={size}
+          height={size}
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover scale-[1.15]"
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -110,10 +110,8 @@ export default function Logo({
   }
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className={`inline-flex items-center ${current.gap} group cursor-pointer select-none ${className}`}
+    <div
+      className={`inline-flex items-center ${current.gap} group cursor-pointer select-none hover:scale-[1.01] active:scale-[0.99] transition-transform duration-200 ${className}`}
     >
       {/* Logo Image Mark */}
       <div className="shrink-0">
@@ -148,7 +146,6 @@ export default function Logo({
           </div>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 }
-

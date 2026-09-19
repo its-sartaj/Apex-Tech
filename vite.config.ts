@@ -21,8 +21,22 @@ export default defineConfig({
   build: {
     target: 'esnext',
     minify: 'esbuild',
+    cssMinify: 'lightningcss',
     cssCodeSplit: true,
     sourcemap: false,
     chunkSizeWarningLimit: 1000,
+    modulePreload: false,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/motion')) {
+            return 'motion';
+          }
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'react-vendor';
+          }
+        },
+      },
+    },
   },
 });
