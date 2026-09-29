@@ -6,7 +6,7 @@
   "homepage": "https://its-sartaj.github.io/Apex-Tech/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/optimize-build.js",
     "preview": "vite preview"
   },
   "dependencies": {
