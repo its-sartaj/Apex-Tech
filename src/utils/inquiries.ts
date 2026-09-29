@@ -1,15 +1,19 @@
-﻿import { Inquiry } from '../types';
+import { Inquiry } from '../types';
 
 const STORAGE_KEY = 'apex_tech_inquiries_v1';
 
+let memoryCache: Inquiry[] | null = null;
+
 export function getInquiries(): Inquiry[] {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    return JSON.parse(raw);
+    const raw = typeof window !== 'undefined' && window.localStorage ? localStorage.getItem(STORAGE_KEY) : null;
+    if (!raw) return memoryCache || [];
+    const parsed = JSON.parse(raw);
+    memoryCache = parsed;
+    return parsed;
   } catch (err) {
     console.error('Failed to parse inquiries from localStorage:', err);
-    return [];
+    return memoryCache || [];
   }
 }
 
@@ -22,7 +26,7 @@ export function saveInquiry(data: {
   scope?: string;
   message?: string;
 }): Inquiry {
-  const inquiries = getInquiries();
+  const inquiries = [...getInquiries()];
   const newInquiry: Inquiry = {
     id: 'inq_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
     ...data,
@@ -31,10 +35,14 @@ export function saveInquiry(data: {
   };
 
   inquiries.unshift(newInquiry);
+  memoryCache = inquiries;
+
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries));
+    }
   } catch (err) {
-    console.error('Failed to save inquiry to localStorage:', err);
+    console.error('Failed to save inquiry to localStorage (fallback memory active):', err);
   }
 
   return newInquiry;
@@ -44,8 +52,11 @@ export function updateInquiryStatus(id: string, status: Inquiry['status']): Inqu
   const inquiries = getInquiries().map((inq) =>
     inq.id === id ? { ...inq, status } : inq
   );
+  memoryCache = inquiries;
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries));
+    }
   } catch (err) {
     console.error('Failed to update inquiry status in localStorage:', err);
   }
@@ -54,8 +65,11 @@ export function updateInquiryStatus(id: string, status: Inquiry['status']): Inqu
 
 export function deleteInquiry(id: string): Inquiry[] {
   const inquiries = getInquiries().filter((inq) => inq.id !== id);
+  memoryCache = inquiries;
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries));
+    }
   } catch (err) {
     console.error('Failed to delete inquiry from localStorage:', err);
   }
@@ -63,8 +77,11 @@ export function deleteInquiry(id: string): Inquiry[] {
 }
 
 export function clearAllInquiries(): void {
+  memoryCache = [];
   try {
-    localStorage.removeItem(STORAGE_KEY);
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.removeItem(STORAGE_KEY);
+    }
   } catch (err) {
     console.error('Failed to clear inquiries from localStorage:', err);
   }

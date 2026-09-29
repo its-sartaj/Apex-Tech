@@ -25,6 +25,7 @@ export default function ConsultationModal({ isOpen, onClose, defaultService }: C
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Field validation and shake state
@@ -121,24 +122,31 @@ export default function ConsultationModal({ isOpen, onClose, defaultService }: C
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     const isValid = validateForm();
     if (!isValid) return;
 
     setIsSubmitting(true);
-    saveInquiry({
-      type: 'consultation_modal',
-      name,
-      email,
-      phone,
-      service,
-      scope: 'Direct Discovery',
-      message: notes,
-    });
-    // Smooth micro-delay for realistic feedback
-    setTimeout(() => {
+    try {
+      saveInquiry({
+        type: 'consultation_modal',
+        name,
+        email,
+        phone,
+        service,
+        scope: 'Direct Discovery',
+        message: notes,
+      });
+      // Smooth micro-delay for realistic feedback
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      }, 400);
+    } catch (err) {
+      console.error('Failed to submit consultation request:', err);
       setIsSubmitting(false);
-      setSubmitted(true);
-    }, 400);
+      setSubmitError('Unable to submit inquiry at this moment. Please use WhatsApp or call directly.');
+    }
   };
 
   const getWhatsAppQuickUrl = () => {
@@ -193,13 +201,13 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                 </span>
 
                 <motion.button
-                  whileHover={{ scale: 1.1, rotate: 90 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.08, rotate: 90 }}
+                  whileTap={{ scale: 0.92 }}
                   onClick={onClose}
-                  className="p-2 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 cursor-pointer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 cursor-pointer"
                   aria-label="Close dialog"
                 >
-                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <X className="w-5 h-5" />
                 </motion.button>
               </div>
             </div>
@@ -448,6 +456,13 @@ Scope: ${notes || 'Discussing our upcoming digital roadmap.'}`;
                     </div>
                     <span className="text-[#017E84] font-semibold">100% IP Ownership</span>
                   </div>
+
+                  {submitError && (
+                    <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* 3. PINNED BOTTOM ACTION FOOTER (ALWAYS VISIBLE & INSTANTLY CLICKABLE) */}

@@ -1,0 +1,22 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Apex Tech",
+    "documentationUrl": "https://its-sartaj.github.io/Apex-Tech/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:apextech:studio:web-architect",
+      "displayName": "Apex Tech Web & UI/UX Studio",
+      "type": "application/a2a-agent-card+json",
+      "url": "https://its-sartaj.github.io/Apex-Tech/llms.txt",
+      "description": "Apex Tech is a premier digital studio for high-performing web development, modern UI/UX design systems, and technical SEO.",
+      "representativeQueries": [
+        "Modern web development services",
+        "Hire React and Next.js frontend agency",
+        "Custom UI UX design system studio",
+        "Technical SEO Core Web Vitals optimization"
+      ]
+    }
+  ]
+}

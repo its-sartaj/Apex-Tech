@@ -51,7 +51,7 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               role="tab"
               aria-selected={activeFilter === 'all'}
               onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeFilter === 'all'
                   ? 'bg-[#714B67] text-white shadow-sm'
                   : 'bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-[#714B67]'
@@ -63,7 +63,7 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               role="tab"
               aria-selected={activeFilter === 'web'}
               onClick={() => setActiveFilter('web')}
-              className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeFilter === 'web'
                   ? 'bg-[#714B67] text-white shadow-sm'
                   : 'bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-[#714B67]'
@@ -75,7 +75,7 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               role="tab"
               aria-selected={activeFilter === 'uiux'}
               onClick={() => setActiveFilter('uiux')}
-              className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeFilter === 'uiux'
                   ? 'bg-[#714B67] text-white shadow-sm'
                   : 'bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-[#714B67]'
@@ -87,7 +87,7 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
               role="tab"
               aria-selected={activeFilter === 'seo'}
               onClick={() => setActiveFilter('seo')}
-              className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeFilter === 'seo'
                   ? 'bg-[#714B67] text-white shadow-sm'
                   : 'bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-[#714B67]'
@@ -165,8 +165,8 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
 
                 {/* Metrics Highlight */}
                 <div className="grid grid-cols-3 gap-2 p-3 bg-slate-50 rounded-2xl border border-slate-200">
-                  {project.impactMetrics.map((metric, i) => (
-                    <div key={i} className="text-center">
+                  {project.impactMetrics.map((metric) => (
+                    <div key={metric.label} className="text-center">
                       <div className="font-display font-extrabold text-xs sm:text-sm text-slate-900 leading-tight">
                         {metric.value}
                       </div>
@@ -180,9 +180,9 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                 {/* Tech chips & Action */}
                 <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
                   <div className="flex flex-wrap gap-1.5 max-w-[70%]">
-                    {project.techStack.slice(0, 2).map((tech, idx) => (
+                    {project.techStack.slice(0, 2).map((tech) => (
                       <span
-                        key={idx}
+                        key={tech}
                         className="px-2 py-0.5 bg-slate-100 border border-slate-200 rounded text-[11px] text-slate-700 font-medium truncate"
                       >
                         {tech}
@@ -213,9 +213,9 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
           className="mt-14 p-8 rounded-3xl bg-white border border-slate-200 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6"
         >
           <div>
-            <h4 className="font-display font-bold text-2xl text-slate-900">
+            <h3 className="font-display font-bold text-2xl text-slate-900">
               Have a product idea or overhaul in mind?
-            </h4>
+            </h3>
             <p className="text-sm text-slate-600 mt-1 font-normal">
               Direct engineering line: <a href={`tel:${COMPANY_DETAILS.phoneTel}`} className="text-slate-900 font-mono font-bold underline">{COMPANY_DETAILS.phone}</a> • Response within 2 hours.
             </p>
@@ -323,8 +323,8 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                   Delivered Performance & Impact:
                 </h4>
                 <div className="grid grid-cols-3 gap-3">
-                  {selectedCaseStudy.impactMetrics.map((m, i) => (
-                    <div key={i} className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-center">
+                  {selectedCaseStudy.impactMetrics.map((m) => (
+                    <div key={m.label} className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-center">
                       <div className="font-display font-extrabold text-lg text-[#017E84]">
                         {m.value}
                       </div>
@@ -342,9 +342,9 @@ export default function WorkPortfolio({ onOpenConsultation }: WorkPortfolioProps
                   Production Stack:
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {selectedCaseStudy.techStack.map((tech, i) => (
+                  {selectedCaseStudy.techStack.map((tech) => (
                     <span
-                      key={i}
+                      key={tech}
                       className="px-3 py-1 bg-slate-100 border border-slate-200 rounded-lg text-xs font-semibold text-slate-800"
                     >
                       {tech}

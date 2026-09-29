@@ -37,7 +37,7 @@ export default function App() {
       <Header onOpenConsultation={handleOpenConsultation} />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 pb-16 md:pb-6">
         {/* Instant Above-The-Fold Hero Section */}
         <Hero onOpenConsultation={handleOpenConsultation} />
         

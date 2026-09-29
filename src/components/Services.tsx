@@ -85,9 +85,9 @@ export default function Services({ onSelectService }: ServicesProps) {
 
                 {/* Tech Chips */}
                 <div className="flex flex-wrap gap-1.5 mb-6">
-                  {service.technologies.slice(0, 4).map((tech, idx) => (
+                  {service.technologies.slice(0, 4).map((tech) => (
                     <span
-                      key={idx}
+                      key={tech}
                       className="text-xs font-semibold text-[#017E84] bg-[#017E84]/10 border border-[#017E84]/20 px-2.5 py-1 rounded-md"
                     >
                       {tech}
@@ -137,9 +137,9 @@ export default function Services({ onSelectService }: ServicesProps) {
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#017E84]">
                   Detailed Breakdown
                 </span>
-                <h4 className="font-display font-bold text-2xl text-slate-900">
+                <h3 className="font-display font-bold text-2xl text-slate-900">
                   {selectedService.title} Blueprint
-                </h4>
+                </h3>
               </div>
             </div>
 
@@ -167,13 +167,13 @@ export default function Services({ onSelectService }: ServicesProps) {
               </p>
 
               <div>
-                <h5 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
                   <Award className="w-4 h-4 text-[#714B67]" />
                   <span>Key Technical Capabilities</span>
-                </h5>
+                </h4>
                 <div className="space-y-2.5">
-                  {selectedService.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
+                  {selectedService.features.map((feat) => (
+                    <div key={feat} className="flex items-start gap-2.5 text-sm text-slate-700">
                       <div className="w-5 h-5 rounded-full bg-[#017E84]/10 text-[#017E84] flex items-center justify-center shrink-0 mt-0.5 border border-[#017E84]/30">
                         <Check className="w-3 h-3" />
                       </div>
@@ -190,9 +190,9 @@ export default function Services({ onSelectService }: ServicesProps) {
                   Verified Tech Stack
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {selectedService.technologies.map((t, idx) => (
+                  {selectedService.technologies.map((t) => (
                     <span
-                      key={idx}
+                      key={t}
                       className="px-2.5 py-1 bg-white border border-slate-200 rounded-md text-xs font-semibold text-slate-800 shadow-xs"
                     >
                       {t}
@@ -206,8 +206,8 @@ export default function Services({ onSelectService }: ServicesProps) {
                   Standard Deliverables
                 </span>
                 <ul className="space-y-2 text-xs text-slate-800 font-medium">
-                  {selectedService.deliverables.map((del, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
+                  {selectedService.deliverables.map((del) => (
+                    <li key={del} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#017E84]" />
                       <span>{del}</span>
                     </li>

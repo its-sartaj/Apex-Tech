@@ -140,9 +140,9 @@ export default function Process({ onOpenConsultation }: ProcessProps) {
                   <span className="text-[11px] font-bold uppercase tracking-widest text-[#017E84]">
                     Phase {PROCESS_STAGES[activeStage].number} Details
                   </span>
-                  <h4 className="font-display font-bold text-2xl text-slate-900">
+                  <h3 className="font-display font-bold text-2xl text-slate-900">
                     {PROCESS_STAGES[activeStage].name}
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
@@ -157,13 +157,13 @@ export default function Process({ onOpenConsultation }: ProcessProps) {
               </p>
 
               <div>
-                <h5 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
                   Core Stage Activities:
-                </h5>
+                </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {PROCESS_STAGES[activeStage].activities.map((act, i) => (
                     <div
-                      key={i}
+                      key={act}
                       className="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-800 font-medium flex items-start gap-2 shadow-2xs"
                     >
                       <span className="w-4 h-4 rounded-full bg-[#714B67]/10 text-[#714B67] flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">

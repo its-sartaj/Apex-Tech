@@ -146,7 +146,7 @@ export default function Footer() {
             <a href="#contact" className="hover:text-[#714B67] text-slate-600 transition-colors">Contact</a>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 shadow-sm transition-colors cursor-pointer"
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 shadow-sm transition-colors cursor-pointer"
               aria-label="Scroll back to top"
             >
               <ArrowUp className="w-4 h-4" />

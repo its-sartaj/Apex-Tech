@@ -92,7 +92,7 @@ export default function Header({ onOpenConsultation }: HeaderProps) {
           <div className="flex md:hidden items-center gap-2">
             <a
               href={`tel:${COMPANY_DETAILS.phoneTel}`}
-              className="p-2 rounded-full bg-slate-100 text-[#714B67] border border-slate-200"
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-100 text-[#714B67] border border-slate-200"
               aria-label="Call Apex Tech"
             >
               <Phone className="w-4 h-4" />
@@ -100,7 +100,7 @@ export default function Header({ onOpenConsultation }: HeaderProps) {
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="w-11 h-11 flex items-center justify-center rounded-lg text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation-menu"

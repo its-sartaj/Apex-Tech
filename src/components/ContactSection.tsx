@@ -24,6 +24,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
@@ -106,23 +107,30 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     const isValid = validateForm();
     if (!isValid) return;
 
     setIsSubmitting(true);
-    saveInquiry({
-      type: 'contact_form',
-      name,
-      email,
-      phone,
-      service,
-      scope: projectScope,
-      message,
-    });
-    setTimeout(() => {
+    try {
+      saveInquiry({
+        type: 'contact_form',
+        name,
+        email,
+        phone,
+        service,
+        scope: projectScope,
+        message,
+      });
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+      }, 450);
+    } catch (err) {
+      console.error('Failed to submit contact inquiry:', err);
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 450);
+      setSubmitError('Unable to process inquiry right now. Please call or WhatsApp us directly.');
+    }
   };
 
   const getWhatsAppSubmitUrl = () => {
@@ -536,7 +544,7 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setProjectScope(scope)}
-                          className={`py-2.5 px-3 rounded-xl text-xs font-bold border transition-all truncate cursor-pointer ${
+                          className={`py-2.5 px-3 min-h-[44px] rounded-xl text-xs font-bold border transition-all truncate cursor-pointer ${
                             projectScope === scope
                               ? 'bg-[#714B67] text-white border-[#714B67] shadow-sm'
                               : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
@@ -562,6 +570,13 @@ Message: ${message || 'I would like to discuss a new digital project with your t
                       className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:border-[#714B67] focus:ring-1 focus:ring-[#714B67] transition-colors"
                     />
                   </div>
+
+                  {submitError && (
+                    <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
 
                   <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                     <motion.button

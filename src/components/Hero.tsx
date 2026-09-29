@@ -21,7 +21,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         {[...Array(6)].map((_, i) => (
           <div
-            key={i}
+            key={`hero-particle-${i}`}
             className="absolute w-1.5 h-1.5 rounded-full bg-slate-300/40 animate-pulse"
             style={{
               top: `${15 + i * 14}%`,
@@ -279,9 +279,9 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
         {/* Bottom Metrics Row (Instant render - Zero main thread scroll overhead) */}
         <div className="mt-16 pt-10 border-t border-slate-200">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {COMPANY_DETAILS.stats.map((stat, i) => (
+            {COMPANY_DETAILS.stats.map((stat) => (
               <div
-                key={i}
+                key={stat.label}
                 className="space-y-1.5 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md hover:-translate-y-1 hover:border-[#714B67] transition-all"
               >
                 <div className="font-display font-black text-3xl sm:text-5xl text-slate-900 tracking-tight">

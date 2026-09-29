@@ -42,7 +42,7 @@ export default function Testimonials() {
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-1 text-amber-500">
                     {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400" />
+                      <Star key={`${t.id}-star-${i}`} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
                   <Quote className="w-6 h-6 text-slate-200 group-hover:text-[#714B67]/30 transition-colors" />

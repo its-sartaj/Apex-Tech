@@ -65,7 +65,7 @@ export default function FAQ({ onOpenConsultation }: FAQProps) {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-[#714B67] text-white shadow-sm'
                     : 'bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-[#714B67]'
