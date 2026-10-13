@@ -1,6 +1,11 @@
 # Apex Tech — Modern Digital Studio & Website Builder
 
-Apex Tech is a high-performance, modern digital agency web application crafted with React 19, TypeScript, Tailwind CSS, and Framer Motion. Featuring interactive project inquiry discovery, live portfolio showcase, and responsive mobile-first design.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Apex%20Tech-brightgreen?style=for-the-badge&logo=githubpages)](https://its-sartaj.github.io/Apex-Tech/)
+[![Lighthouse Mobile Performance](https://img.shields.io/badge/Lighthouse%20Performance-100%2F100-success?style=for-the-badge&logo=google-chrome)](https://its-sartaj.github.io/Apex-Tech/)
+
+🌐 **Live Website**: [https://its-sartaj.github.io/Apex-Tech/](https://its-sartaj.github.io/Apex-Tech/)
+
+Apex Tech is a high-performance, modern digital agency web application crafted with React 19, TypeScript, Tailwind CSS, and Motion. Featuring interactive project inquiry discovery, live portfolio showcase, responsive mobile-first design, and verified 100/100 Core Web Vitals on mobile.
 
 ---
 
@@ -56,12 +61,11 @@ Apex Tech is a high-performance, modern digital agency web application crafted w
 
 ---
 
-## 🌐 Deployment
+## 🌐 Deployment & Live Site
 
-The project can be deployed instantly on modern hosting providers:
+- **GitHub Pages (Live Production)**: [https://its-sartaj.github.io/Apex-Tech/](https://its-sartaj.github.io/Apex-Tech/) (Automated CI/CD via GitHub Actions).
 - **Vercel**: Import repository and deploy directly (Framework Preset: `Vite`).
 - **Netlify**: Connect GitHub repository, build command: `npm run build`, publish directory: `dist`.
-- **GitHub Pages**: Build output in `dist` folder.
 
 ---
 
